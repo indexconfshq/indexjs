@@ -1,6 +1,6 @@
 import React from 'react'
-import { navigate } from 'gatsby'
 import { Grid, Box, Heading, Button, Text } from 'theme-ui'
+import AniLink from 'gatsby-plugin-transition-link/AniLink'
 
 import logo from '../images/logo.svg'
 import xgeeksLogo from '../images/xgeeks-logo.svg'
@@ -24,7 +24,10 @@ const Index = () => {
                             height: '155px',
                         }}
                     >
-                        <Heading as="h1" sx={{ maxWidth: 350, fontSize: ['1.8em', '2em'] }}>
+                        <Heading
+                            as="h1"
+                            sx={{ maxWidth: 350, fontSize: ['1.8em', '2em'] }}
+                        >
                             The first JS dedicated conference in Portugal
                         </Heading>
                     </Box>
@@ -37,8 +40,16 @@ const Index = () => {
                             fontFamily: 'system-ui',
                         }}
                     >
-                        <Button onClick={() => navigate('/speakersForm')} sx={{ fontSize: '1.3em' }}>I want to speak</Button>
-                        <Button sx={{ fontSize: '1.3em' }}>Keep me informed</Button>
+                        <AniLink fade to="speakersForm" duration={1}>
+                            <Button sx={{ fontSize: '1.3em' }}>
+                                I want to speak
+                            </Button>
+                        </AniLink>
+                        <AniLink fade to="keepMeInformed" duration={1}>
+                            <Button sx={{ fontSize: '1.3em' }}>
+                                Keep me informed
+                            </Button>
+                        </AniLink>
                     </Grid>
                 </Box>
             </Grid>
