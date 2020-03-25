@@ -3,6 +3,7 @@ import React from 'react'
 import { jsx } from 'theme-ui'
 
 import './layout.css'
+import Header from './header'
 
 const Layout = ({ children }) => {
     return (
@@ -10,31 +11,24 @@ const Layout = ({ children }) => {
             sx={{
                 display: 'flex',
                 flexDirection: 'column',
-                // set this to `minHeight: '100vh'` for full viewport height
-                minHeight: 256,
+                minHeight: '100vh',
             }}
         >
-            <header
-                sx={{
-                    width: '100%',
-                }}
-            >
-                Header
-            </header>
+            <Header />
             <main
                 sx={{
                     width: '100%',
                     flex: '1 1 auto',
                 }}
             >
-                { children }
+                {children}
             </main>
             <footer
                 sx={{
                     width: '100%',
                 }}
             >
-                Footer
+                @indexconf
             </footer>
         </div>
     )
