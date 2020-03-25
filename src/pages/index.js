@@ -1,10 +1,11 @@
 import React from 'react';
+import { Box } from 'theme-ui'
 
 const Index = () => {
     return (
-        <div>
+        <Box>
            Hello
-        </div>
+        </Box>
     );
 };
 
