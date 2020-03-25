@@ -1,0 +1,28 @@
+{
+  "name": "indexjs",
+  "version": "0.0.1",
+  "description": "IndexJS conference site",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/indexconfshq/indexjs.git"
+  },
+  "keywords": [
+    "conference",
+    "javascript"
+  ],
+  "author": "indexconfs",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/indexconfshq/indexjs/issues"
+  },
+  "homepage": "https://github.com/indexconfshq/indexjs#readme",
+  "dependencies": {
+    "gatsby": "^2.20.5",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  }
+}
