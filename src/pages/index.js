@@ -1,8 +1,9 @@
 import React from 'react'
-import { Box } from 'theme-ui'
+
+import Layout from '../components/layout'
 
 const Index = () => {
-    return <Box>Hello</Box>
+    return <Layout>Hello</Layout>
 }
 
 export default Index
