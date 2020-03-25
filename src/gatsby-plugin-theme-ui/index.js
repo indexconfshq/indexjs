@@ -15,9 +15,15 @@ export default {
             cursor: 'pointer',
 
             '&:hover': {
-                bg: 'text',
+                background: 'linear-gradient(125deg, rgba(248,205,0,1) 0%, rgba(233,27,88,1) 100%)',
                 color: 'background',
             },
+        },
+    },
+    links: {
+        social: {
+            color: 'inherit',
+            textDecoration: 'none',
         },
     },
     fonts: {

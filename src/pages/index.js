@@ -1,4 +1,5 @@
 import React from 'react'
+import { navigate } from 'gatsby'
 import { Grid, Box, Heading, Button, Text } from 'theme-ui'
 
 import logo from '../images/logo.svg'
@@ -36,8 +37,8 @@ const Index = () => {
                             fontFamily: 'system-ui',
                         }}
                     >
-                        <Button sx={{ fontSize: '1.3em' }}>I want to speak</Button>
-                        <Button sx={{ fontSize: '1.3em' }}>Keep me inform</Button>
+                        <Button onClick={() => navigate('/speakersForm')} sx={{ fontSize: '1.3em' }}>I want to speak</Button>
+                        <Button sx={{ fontSize: '1.3em' }}>Keep me informed</Button>
                     </Grid>
                 </Box>
             </Grid>

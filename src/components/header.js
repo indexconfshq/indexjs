@@ -1,6 +1,7 @@
 import React from 'react'
-import { FaInstagram, FaTwitter, FaFacebookF } from 'react-icons/fa';
-import { Flex, Box } from 'theme-ui'
+import { Flex } from 'theme-ui'
+
+import SocialIcon from './socialIcon'
 
 const Header = () => {
     return (
@@ -13,9 +14,9 @@ const Header = () => {
                 }}
 
             >
-                <Box sx={{ p: '6px', opacity: '0.7', cursor: 'pointer' }}><FaInstagram /></Box>
-                <Box sx={{ p: '6px', opacity: '0.7', cursor: 'pointer' }}><FaTwitter /></Box>
-                <Box sx={{ p: '6px', opacity: '0.7', cursor: 'pointer' }}><FaFacebookF /></Box>
+                <SocialIcon variant="instagram" />
+                <SocialIcon variant="twitter" />
+                <SocialIcon variant="facebook" />
             </Flex>
         </header>
     )
