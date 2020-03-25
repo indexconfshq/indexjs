@@ -23,13 +23,13 @@ const Layout = ({ children }) => {
             >
                 {children}
             </main>
-            <footer
-                sx={{
-                    width: '100%',
-                }}
-            >
-                @indexconf
-            </footer>
+            {/*<footer*/}
+            {/*    sx={{*/}
+            {/*        width: '100%',*/}
+            {/*    }}*/}
+            {/*>*/}
+            {/*    @indexconf*/}
+            {/*</footer>*/}
         </div>
     )
 }
