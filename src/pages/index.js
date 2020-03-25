@@ -1,13 +1,15 @@
 import React from 'react'
-import { Grid, Box, Heading, Flex, Button, Text } from 'theme-ui'
+import { Grid, Box, Heading, Button, Text } from 'theme-ui'
 
 import logo from '../images/logo.svg'
 import xgeeksLogo from '../images/xgeeks-logo.svg'
 import Layout from '../components/layout'
+import SEO from '../components/SEO'
 
 const Index = () => {
     return (
         <Layout>
+            <SEO />
             <Grid columns={[1, 1, 2]}>
                 <Box sx={{ p: '0 56px 0 56px' }}>
                     <img src={logo} alt="logo" width="275px" />
@@ -26,7 +28,7 @@ const Index = () => {
                         </Heading>
                     </Box>
                     <Grid
-                        columns={[1, 2]}
+                        columns={[1, 2, 2, 3]}
                         sx={{
                             py: 20,
                             pr: 20,
@@ -34,8 +36,8 @@ const Index = () => {
                             fontFamily: 'system-ui',
                         }}
                     >
-                        <Button>I want to speak</Button>
-                        <Button>Keep me inform</Button>
+                        <Button sx={{ fontSize: '1.3em' }}>I want to speak</Button>
+                        <Button sx={{ fontSize: '1.3em' }}>Keep me inform</Button>
                     </Grid>
                 </Box>
             </Grid>
