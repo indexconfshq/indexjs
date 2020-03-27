@@ -41,12 +41,12 @@ const Index = () => {
                         }}
                     >
                         <AniLink fade to="speakersForm" duration={1}>
-                            <Button sx={{ fontSize: '1.3em' }}>
+                            <Button sx={{ fontSize: '1.3em', width: '100%' }}>
                                 I want to speak
                             </Button>
                         </AniLink>
                         <AniLink fade to="keepMeInformed" duration={1}>
-                            <Button sx={{ fontSize: '1.3em' }}>
+                            <Button sx={{ fontSize: '1.3em', width: '100%' }}>
                                 Keep me informed
                             </Button>
                         </AniLink>
