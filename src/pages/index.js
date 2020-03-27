@@ -40,12 +40,12 @@ const Index = () => {
                             fontFamily: 'system-ui',
                         }}
                     >
-                        <AniLink fade to="speakersForm" duration={1}>
+                        <AniLink fade to="/call-to-speakers" duration={1}>
                             <Button sx={{ fontSize: '1.3em', width: '100%' }}>
                                 I want to speak
                             </Button>
                         </AniLink>
-                        <AniLink fade to="keepMeInformed" duration={1}>
+                        <AniLink fade to="/keep-me-informed" duration={1}>
                             <Button sx={{ fontSize: '1.3em', width: '100%' }}>
                                 Keep me informed
                             </Button>
