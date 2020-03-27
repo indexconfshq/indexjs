@@ -1,4 +1,6 @@
-import React, { useReducer } from 'react'
+import React, { useState, useReducer } from 'react'
+import firebase from 'gatsby-plugin-firebase'
+
 import {
     Grid,
     Box,
@@ -21,10 +23,20 @@ const INITIAL_STATE = {
     more: '',
 }
 
+const SUBMISSION_STATES = {
+    NOT_SUBMITTED: 'NOT_SUBMITTED',
+    SUBMITTING: 'SUBMITTING',
+    SUBMITTED_SUCCESS: 'SUBMITTED_SUCCESS',
+    SUBMITTED_ERROR: 'SUBMITTED_ERROR',
+}
+
 const reducer = (state, { type, payload }) => {
     switch (type) {
         case 'name':
-            return {...state, [type]: payload}
+        case 'email':
+        case 'subject':
+        case 'more':
+            return { ...state, [type]: payload }
         default:
             return state
     }
@@ -32,13 +44,26 @@ const reducer = (state, { type, payload }) => {
 
 const Index = () => {
     const [state, dispatch] = useReducer(reducer, INITIAL_STATE)
+    const [submissionState, setSubmissionState] = useState(
+        SUBMISSION_STATES.NOT_SUBMITTED
+    )
 
     const onFieldChange = (field) => ({ target }) => {
         dispatch({ type: field, payload: target.value })
     }
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault()
+        setSubmissionState(SUBMISSION_STATES.SUBMITTING)
+
+        try {
+            const db = firebase.firestore()
+            await db.collection('contacts').add(state)
+            setSubmissionState(SUBMISSION_STATES.SUBMITTED_SUCCESS)
+        } catch (e) {
+            console.log('error', e)
+            setSubmissionState(SUBMISSION_STATES.SUBMITTED_ERROR)
+        }
         console.log('form', state)
     }
 
@@ -88,19 +113,34 @@ const Index = () => {
                                 <Label pt="10px" pb="5px">
                                     * Where can we reach you
                                 </Label>
-                                <Input required type="email" placeholder="email" />
+                                <Input
+                                    required
+                                    onChange={onFieldChange('email')}
+                                    value={state.email}
+                                    type="email"
+                                    placeholder="email"
+                                />
                             </Box>
                             <Box>
                                 <Label pt="10px" pb="5px">
                                     * What's your talk subject
                                 </Label>
-                                <Input required placeholder="ex: css in JS the future" />
+                                <Input
+                                    required
+                                    onChange={onFieldChange('subject')}
+                                    value={state.subject}
+                                    placeholder="ex: css in JS the future"
+                                />
                             </Box>
                             <Box>
                                 <Label pt="10px" pb="5px">
                                     Anything else?
                                 </Label>
-                                <Textarea rows={3} />
+                                <Textarea
+                                    onChange={onFieldChange('more')}
+                                    value={state.more}
+                                    rows={3}
+                                />
                             </Box>
                         </Box>
                     </Box>
@@ -111,7 +151,10 @@ const Index = () => {
                             fontFamily: 'system-ui',
                         }}
                     >
-                        <Button type="submit" sx={{ fontSize: '1.3em', width: 200 }}>
+                        <Button
+                            type="submit"
+                            sx={{ fontSize: '1.3em', width: 200 }}
+                        >
                             Send
                         </Button>
                     </Flex>
