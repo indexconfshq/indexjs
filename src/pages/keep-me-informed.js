@@ -4,16 +4,29 @@ import { Grid, Box, Heading, Button, Label, Input, Textarea, Flex } from 'theme-
 import logo from '../images/logo.svg'
 import Layout from '../components/layout'
 import SEO from '../components/SEO'
+import { motion } from 'framer-motion'
 
 const KeepMeInformed = () => {
     return (
         <Layout>
             <SEO />
             <Grid columns={[1, 1, 2]}>
-                <Box sx={{ p: '0 56px 0 56px' }}>
-                    <img src={logo} alt="logo" width="275px" />
-                </Box>
-                <Box>
+                <motion.div
+                    initial={{ opacity: 0.2, scale: 0.7 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.6, type: 'tween' }}
+                >
+                    <Box sx={{ p: '0 56px 0 56px' }}>
+                        <img src={logo} alt="logo" width="275px" />
+                    </Box>
+                </motion.div>
+                <motion.div
+                    key={1}
+                    initial={{ x: 200, opacity: 0 }}
+                    animate={{ x: 0, opacity: 1 }}
+                    exit={{ x: 200, opacity: 0 }}
+                    transition={{ duration: 0.6, type: 'tween' }}
+                >
                     <Box
                         sx={{
                             mt: '120px',
@@ -55,7 +68,7 @@ const KeepMeInformed = () => {
                     >
                         <Button sx={{ fontSize: '1.3em', width: 200 }}>Send</Button>
                     </Flex>
-                </Box>
+                </motion.div>
             </Grid>
         </Layout>
     )

@@ -1,6 +1,7 @@
 import React from 'react'
+import { Link } from 'gatsby';
+import { motion } from 'framer-motion'
 import { Grid, Box, Heading, Button, Text } from 'theme-ui'
-import AniLink from 'gatsby-plugin-transition-link/AniLink'
 
 import logo from '../images/logo.svg'
 import xgeeksLogo from '../images/xgeeks-logo.svg'
@@ -12,10 +13,20 @@ const Index = () => {
         <Layout>
             <SEO />
             <Grid columns={[1, 1, 2]}>
-                <Box sx={{ p: '0 56px 0 56px' }}>
-                    <img src={logo} alt="logo" width="275px" />
-                </Box>
-                <Box>
+                <motion.div
+                    initial={{ opacity: 0.2, scale: 0.7 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.6, type: 'tween' }}
+                >
+                    <Box sx={{ p: '0 56px 0 56px' }}>
+                        <img src={logo} alt="logo" width="275px" />
+                    </Box>
+                </motion.div>
+                <motion.div
+                    initial={{ x: 200, opacity: 0 }}
+                    animate={{ x: 0, opacity: 1 }}
+                    transition={{ duration: 0.6, type: 'tween' }}
+                >
                     <Box
                         sx={{
                             mt: '120px',
@@ -40,29 +51,41 @@ const Index = () => {
                             fontFamily: 'system-ui',
                         }}
                     >
-                        <AniLink fade to="/call-to-speakers" duration={1}>
+                        <Link to="/call-to-speakers">
                             <Button sx={{ fontSize: '1.3em', width: '100%' }}>
                                 I want to speak
                             </Button>
-                        </AniLink>
-                        <AniLink fade to="/keep-me-informed" duration={1}>
+                        </Link>
+                        <Link to="/keep-me-informed">
                             <Button sx={{ fontSize: '1.3em', width: '100%' }}>
                                 Keep me informed
                             </Button>
-                        </AniLink>
+                        </Link>
                     </Grid>
-                </Box>
+                </motion.div>
             </Grid>
-            <Box
-                sx={{
-                    p: 35,
-                    fontFamily: 'Menlo',
-                    fontSize: [96, 124],
+            <motion.div
+                initial={{ y: 500 }}
+                animate={{ y: 0 }}
+                transition={{
+                    delay: 0.6,
+                    duration: 0.6,
+                    type: "spring",
+                    stiffness: 180,
+                    damping: 15
                 }}
             >
-                <Text>16/17</Text>
-                <Text>Out</Text>
-            </Box>
+                <Box
+                    sx={{
+                        p: 35,
+                        fontFamily: 'Menlo',
+                        fontSize: [96, 124],
+                    }}
+                >
+                    <Text>16/17</Text>
+                    <Text>Out</Text>
+                </Box>
+            </motion.div>
             <Box
                 sx={{
                     p: 38,

@@ -1,5 +1,6 @@
 import React, { useState, useReducer } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { Link } from 'gatsby';
 import firebase from 'gatsby-plugin-firebase'
 
 import {
@@ -16,7 +17,6 @@ import {
 import logo from '../images/logo.svg'
 import Layout from '../components/layout'
 import SEO from '../components/SEO'
-import AniLink from 'gatsby-plugin-transition-link/AniLink'
 
 const INITIAL_STATE = {
     name: '',
@@ -59,7 +59,7 @@ const FormSubmitted = () => (
                 fontFamily: 'system-ui',
             }}
         >
-            <AniLink fade to="/" duration={1}>
+            <Link to="/">
                 <Button
                     sx={{
                         fontSize: '1.3em',
@@ -68,7 +68,7 @@ const FormSubmitted = () => (
                 >
                     Home
                 </Button>
-            </AniLink>
+            </Link>
         </Flex>
     </Box>
 )
@@ -192,8 +192,10 @@ const Index = () => {
         setSubmissionState(SUBMISSION_STATES.SUBMITTING)
 
         try {
-            // const db = firebase.firestore()
-            // await db.collection('contacts').add(state)
+            if (process.env.NODE_ENV === 'production') {
+                const db = firebase.firestore()
+                await db.collection('contacts').add(state)
+            }
             setSubmissionState(SUBMISSION_STATES.SUBMITTED_SUCCESS)
         } catch (e) {
             console.log('error', e)
@@ -206,19 +208,25 @@ const Index = () => {
         <Layout>
             <SEO />
             <Grid columns={[1, 1, 2]}>
-                <Box sx={{ p: '0 56px 0 56px' }}>
-                    <img src={logo} alt="logo" width="275px" />
-                </Box>
+                <motion.div
+                    initial={{ opacity: 0.2, scale: 0.7 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{  opacity: 0.2, scale: 0.7 }}
+                    transition={{ duration: 0.6, type: 'tween' }}
+                >
+                    <Box sx={{ p: '0 56px 0 56px' }}>
+                        <img src={logo} alt="logo" width="275px" />
+                    </Box>
+                </motion.div>
                 <AnimatePresence initial={true}>
                     {submissionState !==
                         SUBMISSION_STATES.SUBMITTED_SUCCESS && (
                         <motion.div
                             key={1}
-                            style={{ transformOrigin: 'top right' }}
-                            initial={{ scaleY: 0 }}
-                            animate={{ scaleY: 1 }}
-                            exit={{ scaleY: 0 }}
-                            transition={{ duration: 2, type: 'tween' }}
+                            initial={{ x: 200, opacity: 0 }}
+                            animate={{ x: 0, opacity: 1 }}
+                            exit={{ x: 200, opacity: 0 }}
+                            transition={{ duration: 0.6, type: 'tween' }}
                         >
                             <Form
                                 {...{
@@ -233,10 +241,10 @@ const Index = () => {
                         SUBMISSION_STATES.SUBMITTED_SUCCESS && (
                         <motion.div
                             key={2}
-                            style={{ transformOrigin: 'top right' }}
-                            initial={{ scaleY: 0 }}
-                            animate={{ scaleY: 1 }}
-                            transition={{ delay: 2, duration: 2, type: 'tween' }}
+                            initial={{ x: 200, opacity: 0 }}
+                            animate={{ x: 0, opacity: 1 }}
+                            exit={{ x: 200, opacity: 0 }}
+                            transition={{ duration: 1.2, type: 'tween', }}
                         >
                             <FormSubmitted />
                         </motion.div>
