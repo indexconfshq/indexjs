@@ -11,11 +11,12 @@ export default {
             bg: 'transparent',
             border: 'solid 2px #FFFFFF',
             borderRadius: '24px',
-            fontSize: 26,
+            fontSize: '1.3em',
             cursor: 'pointer',
 
             '&:hover': {
-                background: 'linear-gradient(125deg, rgba(248,205,0,1) 0%, rgba(233,27,88,1) 100%)',
+                background:
+                    'linear-gradient(125deg, rgba(248,205,0,1) 0%, rgba(233,27,88,1) 100%)',
                 color: 'background',
             },
         },
