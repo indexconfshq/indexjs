@@ -1,4 +1,5 @@
 import React, { useState, useReducer } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 import firebase from 'gatsby-plugin-firebase'
 
 import {
@@ -208,18 +209,39 @@ const Index = () => {
                 <Box sx={{ p: '0 56px 0 56px' }}>
                     <img src={logo} alt="logo" width="275px" />
                 </Box>
-                {submissionState !== SUBMISSION_STATES.SUBMITTED_SUCCESS && (
-                    <Form
-                        {...{
-                            state,
-                            handleSubmit,
-                            onFieldChange,
-                        }}
-                    />
-                )}
-                {submissionState === SUBMISSION_STATES.SUBMITTED_SUCCESS && (
-                    <FormSubmitted />
-                )}
+                <AnimatePresence initial={true}>
+                    {submissionState !==
+                        SUBMISSION_STATES.SUBMITTED_SUCCESS && (
+                        <motion.div
+                            key={1}
+                            style={{ transformOrigin: 'top right' }}
+                            initial={{ scaleY: 0 }}
+                            animate={{ scaleY: 1 }}
+                            exit={{ scaleY: 0 }}
+                            transition={{ duration: 2, type: 'tween' }}
+                        >
+                            <Form
+                                {...{
+                                    state,
+                                    handleSubmit,
+                                    onFieldChange,
+                                }}
+                            />
+                        </motion.div>
+                    )}
+                    {submissionState ===
+                        SUBMISSION_STATES.SUBMITTED_SUCCESS && (
+                        <motion.div
+                            key={2}
+                            style={{ transformOrigin: 'top right' }}
+                            initial={{ scaleY: 0 }}
+                            animate={{ scaleY: 1 }}
+                            transition={{ delay: 2, duration: 2, type: 'tween' }}
+                        >
+                            <FormSubmitted />
+                        </motion.div>
+                    )}
+                </AnimatePresence>
             </Grid>
         </Layout>
     )
