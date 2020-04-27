@@ -1,18 +1,21 @@
 import React, { useState, useReducer } from 'react'
+import { Link } from 'gatsby'
 import { AnimatePresence } from 'framer-motion'
 import firebase from 'gatsby-plugin-firebase'
 
-import { Grid, Box, Heading, Textarea, Flex } from 'theme-ui'
+import { Grid, Box, Textarea } from 'theme-ui'
 
 import logo from '../images/logo.svg'
 import Layout from '../components/layout'
 import SEO from '../components/SEO'
-import FormButton from '../components/Forms/button'
-import FormButtonLink from '../components/Forms/buttonLink'
 import FormFieldLabel from '../components/Forms/label'
 import FormField from '../components/Forms/field'
 import FadeScaleIn from '../components/Animated/FadeScaleIn'
 import SlideInOutFade from '../components/Animated/SlideInOutFade'
+import FormFeedback from '../components/Forms/formFeeback'
+import FormHeading from '../components/Forms/formHeading'
+import FormContainer from '../components/Forms/formContainer'
+import { SUBMISSION_STATES } from '../components/Forms/constants'
 
 const INITIAL_STATE = {
     name: '',
@@ -21,103 +24,48 @@ const INITIAL_STATE = {
     more: '',
 }
 
-const SUBMISSION_STATES = {
-    NOT_SUBMITTED: 'NOT_SUBMITTED',
-    SUBMITTING: 'SUBMITTING',
-    SUBMITTED_SUCCESS: 'SUBMITTED_SUCCESS',
-    SUBMITTED_ERROR: 'SUBMITTED_ERROR',
-}
-
-const BoxHeading = ({ text }) => (
-    <Heading
-        as="h1"
-        sx={{
-            maxWidth: 350,
-            fontSize: ['1.8em', '2em'],
-            pb: 10,
-        }}
-    >
-        {text}
-    </Heading>
-)
-
-const FormSubmitted = () => (
-    <Box>
-        <Box sx={{ mt: '120px', p: [24, 36], bg: '#EFB300' }}>
-            <BoxHeading
-                {...{
-                    text:
-                        "Thank's for reaching out we will get back to you ASAP",
-                }}
-            />
-        </Box>
-        <Flex
-            sx={{ justifyContent: 'flex-end', p: 40, fontFamily: 'system-ui' }}
-        >
-            <FormButtonLink {...{ to: '/', text: 'home' }} />
-        </Flex>
-    </Box>
-)
-
 const Form = ({ state, handleSubmit, onFieldChange }) => {
     return (
-        <form onSubmit={handleSubmit}>
+        <FormContainer handleSubmit={handleSubmit}>
+            <FormHeading {...{ text: 'Tell us more' }} />
             <Box
                 sx={{
-                    mt: '120px',
-                    p: [24, 36],
-                    bg: '#EFB300',
+                    color: 'background',
+                    fontFamily: 'system-ui, sans-serif',
                 }}
             >
-                <BoxHeading {...{ text: 'Tell us more' }} />
-                <Box
-                    sx={{
-                        color: 'background',
-                        fontFamily: 'system-ui, sans-serif',
-                    }}
-                >
-                    <FormField
-                        required
-                        label="* Where can we reach you"
-                        placeholder="name"
-                        value={state.name}
-                        onChange={onFieldChange('name')}
+                <FormField
+                    required
+                    label="* Where can we reach you"
+                    placeholder="name"
+                    value={state.name}
+                    onChange={onFieldChange('name')}
+                />
+                <FormField
+                    required
+                    label="* How can we call you?"
+                    placeholder="email"
+                    value={state.email}
+                    onChange={onFieldChange('email')}
+                />
+                <FormField
+                    required
+                    label="* What's your talk subject"
+                    placeholder="ex: css in JS the future"
+                    value={state.subject}
+                    onChange={onFieldChange('subject')}
+                />
+                <Box>
+                    <FormFieldLabel {...{ label: 'Anything else?' }} />
+                    <Textarea
+                        placeholder="Tell us more"
+                        onChange={onFieldChange('more')}
+                        value={state.more}
+                        rows={3}
                     />
-                    <FormField
-                        required
-                        label="* How can we call you?"
-                        placeholder="email"
-                        value={state.email}
-                        onChange={onFieldChange('email')}
-                    />
-                    <FormField
-                        required
-                        label="* What's your talk subject"
-                        placeholder="ex: css in JS the future"
-                        value={state.subject}
-                        onChange={onFieldChange('subject')}
-                    />
-                    <Box>
-                        <FormFieldLabel {...{ label: 'Anything else?' }} />
-                        <Textarea
-                            placeholder="Tell us more"
-                            onChange={onFieldChange('more')}
-                            value={state.more}
-                            rows={3}
-                        />
-                    </Box>
                 </Box>
             </Box>
-            <Flex
-                sx={{
-                    justifyContent: 'flex-end',
-                    p: 40,
-                    fontFamily: 'system-ui',
-                }}
-            >
-                <FormButton {...{ text: 'send', type: 'submit' }} />
-            </Flex>
-        </form>
+        </FormContainer>
     )
 }
 
@@ -133,7 +81,7 @@ const reducer = (state, { type, payload }) => {
     }
 }
 
-const Index = () => {
+const CallToSpeakers = () => {
     const [state, dispatch] = useReducer(reducer, INITIAL_STATE)
     const [submissionState, setSubmissionState] = useState(
         SUBMISSION_STATES.NOT_SUBMITTED
@@ -160,15 +108,17 @@ const Index = () => {
         }
         console.log('form', state, submissionState)
     }
-
+    console.log(submissionState)
     return (
         <Layout>
             <SEO />
             <Grid columns={[1, 1, 2]}>
                 <FadeScaleIn>
-                    <Box sx={{ p: '0 56px 0 56px' }}>
-                        <img src={logo} alt="logo" width="275px" />
-                    </Box>
+                    <Link {...{ to: '/' }}>
+                        <Box sx={{ p: '0 56px 0 56px' }}>
+                            <img src={logo} alt="logo" width="275px" />
+                        </Box>
+                    </Link>
                 </FadeScaleIn>
                 <AnimatePresence initial={true}>
                     {submissionState !==
@@ -186,7 +136,11 @@ const Index = () => {
                     {submissionState ===
                         SUBMISSION_STATES.SUBMITTED_SUCCESS && (
                         <SlideInOutFade id={2} duration={1.2}>
-                            <FormSubmitted />
+                            <FormFeedback
+                                message="Thank's for reaching out we will get back to you ASAP"
+                                buttonText="home"
+                                buttonRoute="/"
+                            />
                         </SlideInOutFade>
                     )}
                 </AnimatePresence>
@@ -195,4 +149,4 @@ const Index = () => {
     )
 }
 
-export default Index
+export default CallToSpeakers
