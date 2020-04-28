@@ -22,8 +22,9 @@ const SEO = ({ title, description, image }) => {
     const metaTitle = title || site.siteMetadata.title
     const defaultUrl = site.siteMetadata.url
     const defaultImage = site.siteMetadata.image
-    const metaImage = image ? defaultUrl + image : defaultImage
-    console.log('image', metaImage)
+    // Later we can change this to pass images for each page
+    const metaImage = `${defaultUrl}${defaultImage}`
+
     return (
         <Helmet
             htmlAttributes={{
