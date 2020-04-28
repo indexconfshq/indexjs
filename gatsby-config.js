@@ -35,6 +35,12 @@ module.exports = {
                 },
             },
         },
+        {
+            resolve: `gatsby-plugin-google-analytics`,
+            options: {
+                trackingId: process.env.GOOGLE_ANALYTICS_TRACKING_ID,
+            },
+        },
         'gatsby-plugin-react-helmet',
         'gatsby-plugin-theme-ui',
         'gatsby-plugin-transition-link',

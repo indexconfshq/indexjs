@@ -100,15 +100,12 @@ const CallToSpeakers = () => {
                 const db = firebase.firestore()
                 await db.collection('contacts').add(state)
             }
-            console.log('state', state)
             setSubmissionState(SUBMISSION_STATES.SUBMITTED_SUCCESS)
         } catch (e) {
-            console.log('error', e)
             setSubmissionState(SUBMISSION_STATES.SUBMITTED_ERROR)
         }
-        console.log('form', state, submissionState)
     }
-    console.log(submissionState)
+
     return (
         <Layout>
             <SEO />
