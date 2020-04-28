@@ -4,8 +4,8 @@ module.exports = {
     siteMetadata: {
         title: 'indexJS',
         description: 'The first JS dedicated conference in Portugal',
-        url: 'https://www.doe.com', // No trailing slash allowed!
-        image: '/images/logo.svg', // Path to your image you placed in the 'static' folder
+        url: 'https://indexjs.io', // No trailing slash allowed!
+        image: '/logo.svg', // Path to your image you placed in the 'static' folder
         twitterUsername: '@twitter',
     },
     plugins: [
