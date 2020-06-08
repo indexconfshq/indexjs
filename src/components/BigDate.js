@@ -87,6 +87,8 @@ const BigDate = () => {
             mt: '40px',
             textAlign: ['center', 'left'],
             display: 'flex',
+            flexWrap: 'wrap',
+            justifyContent: 'center'
           }}
         >
           <Speaker buttonText={data.button1} />
