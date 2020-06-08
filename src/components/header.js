@@ -14,6 +14,7 @@ const Header = () => {
             >
                 <Flex
                     sx={{
+                        position: 'fixed',
                         p: 56,
                         alignItems: 'center',
                         justifyContent: 'flex-end'
