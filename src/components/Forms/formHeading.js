@@ -6,9 +6,9 @@ const FormHeading = ({ text }) => {
         <Heading
             as="h1"
             sx={{
-                maxWidth: 350,
-                fontSize: ['1.8em', '2em'],
-                pb: 10,
+              fontFamily: 'subHeading',
+              color: 'pink',
+              fontSize: 40
             }}
         >
             {text}

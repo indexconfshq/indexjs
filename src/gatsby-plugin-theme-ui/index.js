@@ -3,8 +3,10 @@ export default {
         text: '#fff',
         background: '#ffffff',
         backgroundSecondary: '#07102b',
-        primary: '#f8cd00',
+        primary: '#f8cd00', //yellow
         secondary: '#e91b58',
+        blue: '#131B3A',
+        pink: '#D23B68',
     },
     buttons: {
         primary: {
@@ -26,12 +28,14 @@ export default {
           height: '54px',
           background: '#00B8CC',
           borderRadius: '117px',
+          cursor: 'pointer',
         },
         tertiary: {
           width: '197px',
           height: '54px',
           background: '#D23B68',
           borderRadius: '117px',
+          cursor: 'pointer',
         }
     },
     links: {
@@ -59,5 +63,5 @@ export default {
           small: '83px'
         },
     },
-    fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 72, 100, 150, 230],
+    fontSizes: [12, 14, 16, 20, 24, 30, 32, 40, 48, 64, 72, 100, 150, 230],
 }
