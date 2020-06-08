@@ -1,7 +1,8 @@
 export default {
     colors: {
         text: '#fff',
-        background: '#07102b',
+        background: '#ffffff',
+        backgroundSecondary: '#07102b',
         primary: '#f8cd00',
         secondary: '#e91b58',
     },
@@ -20,6 +21,18 @@ export default {
                 color: 'background',
             },
         },
+        secondary: {
+          width: '197px',
+          height: '54px',
+          background: '#00B8CC',
+          borderRadius: '117px',
+        },
+        tertiary: {
+          width: '197px',
+          height: '54px',
+          background: '#D23B68',
+          borderRadius: '117px',
+        }
     },
     links: {
         social: {
@@ -28,9 +41,9 @@ export default {
         },
     },
     fonts: {
-        body: 'system-ui, sans-serif',
-        heading: 'system-ui, sans-serif',
-        monospace: 'Menlo, monospace',
+        heading: "chronicnormal, sans-serif",
+        subHeading: "objectivebold, sans-serif",
+        text: "objectiveregular, sans-serif",
     },
     fontWeights: {
         body: 400,
@@ -40,6 +53,11 @@ export default {
     lineHeights: {
         body: 1.5,
         heading: 1.125,
+        bigDate: {
+          large: '157px',
+          medium: '124px',
+          small: '83px'
+        },
     },
-    fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 72],
+    fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 72, 100, 150, 230],
 }

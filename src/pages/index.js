@@ -7,12 +7,14 @@ import logo from '../images/logo.svg'
 import xgeeksLogo from '../images/xgeeks-logo.svg'
 import Layout from '../components/layout'
 import SEO from '../components/SEO'
+import BigDate from '../components/BigDate'
 
 const Index = () => {
     return (
         <Layout>
             <SEO />
-            <Grid columns={[1, 1, 2]}>
+            <BigDate />
+            {/* <Grid columns={[1, 1, 2]}>
                 <motion.div
                     initial={{ opacity: 0.2, scale: 0.7 }}
                     animate={{ opacity: 1, scale: 1 }}
@@ -98,7 +100,7 @@ const Index = () => {
                 <Box sx={{ py: '8px' }}>
                     <img src={xgeeksLogo} height={20} alt="xgeeks logo" />
                 </Box>
-            </Box>
+            </Box> */}
         </Layout>
     )
 }
