@@ -1,13 +1,12 @@
-import React, { useState } from 'react';
-import { Box, Button, Text, Flex } from 'theme-ui'
+import React from 'react';
+import { Box, Text, Flex } from 'theme-ui'
 import get from 'lodash/get';
 import { graphql, useStaticQuery } from 'gatsby';
 import bigLaptop from '../images/big-laptop.png';
 import Container from './Container';
-import FormHeading from './Forms/formHeading';
-import Modal from 'react-modal';
+import Speaker from './Modals/Speaker';
+import Listener from './Modals/Listener';
 
-Modal.setAppElement('#___gatsby');
 
 const BigDate = () => {
 
@@ -26,19 +25,6 @@ const BigDate = () => {
   `);
 
   const data = get(queryResults, 'markdownRemark.frontmatter');
-
-  const [isOpen, setOpened] = useState(false);
-
-  const closeModal = () => {
-    console.log("should change false");
-    setOpened(false);
-    console.log(isOpen);
-  }
-  const openModal = () => {
-    console.log("should change to true");
-    setOpened(true);
-    console.log(isOpen);
-  }
 
   return(
     
@@ -99,56 +85,14 @@ const BigDate = () => {
             fontSize: 20, 
             lineHeight: '21px',
             mt: '40px',
-            textAlign: ['center', 'left']
+            textAlign: ['center', 'left'],
+            display: 'flex',
+            flexWrap: 'wrap',
+            justifyContent: 'center'
           }}
         >
-          <Button
-              variant='secondary'
-              onMouseDown={() => {setOpened(true); console.log("I want to speak click: ", isOpen)}}
-          >
-            {data.button1}
-            <Modal
-              isOpen={isOpen}
-              onRequestClose={closeModal}
-              shouldCloseOnOverlayClick={true}
-              shouldCloseOnEsc={true}
-              style={{
-                content : { 
-                  top : '50%',
-                  left : '50%',
-                  right : 'auto',
-                  bottom : 'auto',
-                  marginRight : '-50%',
-                  transform : 'translate(-50%, -50%)',
-                },
-                overlay: {
-                  display:'block',
-                  zIndex: 1
-                }
-              }}
-            >
-              <h2>Hello</h2>
-              <Button onMouseUp={() => {setOpened(false); console.log("inside modal click: ", isOpen)}}>close</Button>
-              <div>I am a modal</div>
-              <form>
-                <input />
-                <button>tab navigation</button>
-                <button>stays</button>
-                <button>inside</button>
-                <button>the modal</button>
-              </form>
-            </Modal>
-          </Button>
-          <Button
-            variant='tertiary'
-            sx={{
-              mt: [20, 20, null ,null],
-              ml: [null, null, 20, 20],
-              mr: [null, 20, null, null]
-            }}
-          >
-            {data.button2}
-          </Button>
+          <Speaker buttonText={data.button1} />
+          <Listener buttonText={data.button2} />
         </Box>
       </Flex>
     </Container>
