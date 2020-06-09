@@ -1,10 +1,10 @@
 import React from 'react'
-import { Link } from 'gatsby';
-import { motion } from 'framer-motion'
-import { Grid, Box, Heading, Button, Text } from 'theme-ui'
+// import { Link } from 'gatsby';
+// import { motion } from 'framer-motion'
+// import { Grid, Box, Heading, Button, Text } from 'theme-ui'
 
-import logo from '../images/logo.svg'
-import xgeeksLogo from '../images/xgeeks-logo.svg'
+// import logo from '../images/logo.svg'
+// import xgeeksLogo from '../images/xgeeks-logo.svg'
 import Layout from '../components/layout'
 import SEO from '../components/SEO'
 import BigDate from '../components/BigDate'

@@ -62,8 +62,8 @@ const Listener = ({ buttonText }) => {
               cursor: 'pointer'
             }} 
             onMouseUp={() => {setOpenedListener(false)}}
-          >
-            <img src={closeSvg}/>
+          >            
+            <img src={closeSvg} alt="X"/>
           </Box>
           <FormContainer>
             <FormHeading text="I want to enroll" />
