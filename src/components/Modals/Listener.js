@@ -55,7 +55,7 @@ const Listener = ({ buttonText }) => {
           }
         }}
       >
-        <Box sx={{ width: ['100%', '550px' ,'846px'], height: '100%', background: 'white', p:'15px' }}>
+        <Box sx={{ width: ['100%','100%','100%', '550px', '550px', '846px'], height: '100%', background: 'white', p:'15px' }}>
           <Box
             sx={{
               float: 'right',

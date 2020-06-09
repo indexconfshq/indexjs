@@ -1,6 +1,7 @@
 ---
 id: know-us
 title: KNOW US
+ltr: true
 persons:
   - photo: /david-alecrim.png
     name: David Alecrim

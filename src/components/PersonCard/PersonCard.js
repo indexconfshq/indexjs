@@ -7,7 +7,7 @@ const PersonCard = ({ person, gradientLTR = true, index }) => (
   <Box
     sx={{
       position: 'relative',
-      mt: gradientLTR ? [45,45,45, index * 30 ] : [45,45,45, 3 - index * 30 ],
+      mt:[70,70,70, (index * 45)/1.2] ,
     }}
   >
     <Photo photo={person.photo} name={person.name} />

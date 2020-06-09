@@ -9,6 +9,7 @@ import Layout from '../components/layout'
 import SEO from '../components/SEO'
 import BigDate from '../components/BigDate'
 import KnowUs from '../components/KnowUs';
+import Speakers from '../components/Speakers/Speakers';
 
 const Index = () => {
     return (
@@ -16,6 +17,7 @@ const Index = () => {
             <SEO />
             <BigDate />
             <KnowUs />
+            <Speakers />
             {/* <Grid columns={[1, 1, 2]}>
                 <motion.div
                     initial={{ opacity: 0.2, scale: 0.7 }}

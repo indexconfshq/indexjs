@@ -8,7 +8,7 @@ const Body = ({ gradientLTR, name, role, github, twitter, topic = null, topicURL
   <Box
     sx={{
       position: 'relative',
-      background: gradientLTR ? 'linear-gradient(90deg, #D23B68 18.45%, #F0D440 104.3%)' : 'linear-gradient(-90deg, #D23B68 18.45%, #F0D440 104.3%)',
+      background: gradientLTR ? 'linear-gradient(77.25deg, #D23B68 18.45%, #F0D440 104.3%)' : 'linear-gradient(-77.25deg, #D23B68 18.45%, #F0D440 104.3%)',
       height: 387,
       width: 305,
       p: '10px',

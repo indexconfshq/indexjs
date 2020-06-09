@@ -3,7 +3,12 @@ import { Box, Text, Link } from 'theme-ui';
 
 const Footer = ({ topic, topicURL  }) => (
 
-  <Box>
+  <Box 
+    sx={{
+      position: 'absolute',
+      bottom: 10
+    }}
+  >
     {topic &&
       <Box mt="9px">
         <Text 
