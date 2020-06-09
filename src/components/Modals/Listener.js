@@ -23,9 +23,9 @@ const Listener = ({ buttonText }) => {
         variant='tertiary'
         onMouseDown={() => {setOpenedListener(true)}}
         sx={{
-          mt: [20, 20, 0 ,0],
-          ml: [0, 0, 20, 20],
-          mr: [0, 20, 0, 0]
+          mt: [20, 20, 0, 0, 0 ,0],
+          ml: [0, 0, 0, 20, 20, 20],
+          mr: [0, 0, 20, 0, 0, 0]
         }}
       >
         {buttonText}

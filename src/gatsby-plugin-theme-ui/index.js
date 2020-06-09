@@ -1,4 +1,5 @@
 export default {
+    breakpoints: ['360px', '576px', '768px', '992px', '1200px', '1400px'],
     colors: {
         text: '#fff',
         background: '#ffffff',
@@ -7,6 +8,8 @@ export default {
         secondary: '#e91b58',
         blue: '#131B3A',
         pink: '#D23B68',
+        lightestGray: '#FAFAFA',
+        paragraph: '#000'
     },
     buttons: {
         primary: {

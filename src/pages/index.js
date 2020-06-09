@@ -8,12 +8,14 @@ import xgeeksLogo from '../images/xgeeks-logo.svg'
 import Layout from '../components/layout'
 import SEO from '../components/SEO'
 import BigDate from '../components/BigDate'
+import KnowUs from '../components/KnowUs';
 
 const Index = () => {
     return (
         <Layout>
             <SEO />
             <BigDate />
+            <KnowUs />
             {/* <Grid columns={[1, 1, 2]}>
                 <motion.div
                     initial={{ opacity: 0.2, scale: 0.7 }}
