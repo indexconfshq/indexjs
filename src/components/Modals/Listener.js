@@ -23,9 +23,9 @@ const Listener = ({ buttonText }) => {
         variant='tertiary'
         onMouseDown={() => {setOpenedListener(true)}}
         sx={{
-          mt: [20, 20, 0 ,0],
-          ml: [0, 0, 20, 20],
-          mr: [0, 20, 0, 0]
+          mt: [20, 20, 0, 0, 0 ,0],
+          ml: [0, 0, 0, 20, 20, 20],
+          mr: [0, 0, 20, 0, 0, 0]
         }}
       >
         {buttonText}
@@ -62,8 +62,8 @@ const Listener = ({ buttonText }) => {
               cursor: 'pointer'
             }} 
             onMouseUp={() => {setOpenedListener(false)}}
-          >
-            <img src={closeSvg}/>
+          >            
+            <img src={closeSvg} alt="X"/>
           </Box>
           <FormContainer>
             <FormHeading text="I want to enroll" />

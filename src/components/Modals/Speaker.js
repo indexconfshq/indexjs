@@ -57,7 +57,7 @@ const Speaker = ({ buttonText }) => {
             }} 
             onMouseUp={() => {setOpenedSpeaker(false)}}
           >
-            <img src={closeSvg}/>
+            <img src={closeSvg} alt="X"/>
           </Box>
           <FormContainer>
             <FormHeading text="I want to speak" />
