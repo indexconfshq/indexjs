@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, Text } from 'theme-ui';
-import PersonModal from './PersonModal';
+import PersonModal from '../Modals/PersonModal';
 
 const Footer = ({ person, presentationDay }) => (
 

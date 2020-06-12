@@ -57,7 +57,15 @@ const Listener = ({ buttonText = 'Enroll', insideModal = false }) => {
           }
         }}
       >
-        <Box sx={{ width: ['100%','100%','100%', '550px', '550px', '846px'], height: '100%', background: 'white', p:'15px' }}>
+        <Box 
+          sx={{ 
+            width: ['100%','100%','100%', '550px', '550px', '846px'], 
+            height: ['86vh','86vh','86vh','100%'], 
+            overflow:'scroll',
+            background: 'white', 
+            p:'15px',
+          }}
+        >
           <Box
             sx={{
               float: 'right',

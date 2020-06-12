@@ -8,7 +8,7 @@ const Info = ({ person, insideModal }) => (
     sx={{
       color: 'blue',
       maxWidth: '500px',
-      mt: insideModal ? '10px' : 0,
+      mt: insideModal ? ['10px',0] : 0,
       ml: insideModal ? [0,'10px'] : 0
     }}
   >
