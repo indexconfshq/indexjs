@@ -13,6 +13,7 @@ const KnowUs = () => {
       markdownRemark(frontmatter: { id: { eq: "know-us" } }) {
         frontmatter {
           title
+          ltr
           persons {
             name
             photo {
@@ -25,8 +26,6 @@ const KnowUs = () => {
             role
             github
             twitter
-            topic
-            topicURL
           }
           text
         }
@@ -47,7 +46,7 @@ const KnowUs = () => {
         <Title title={data.title} paddingBottom='95px' />
         <Box sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-evenly', alignItems: 'center' }}>
           {data.persons.map( (person, index) => (
-            <PersonCard person={person} gradientLTR={true} index={index} />
+            <PersonCard person={person} gradientLTR={data.ltr} index={index} />
           ))}
         </Box>
         <Box sx={{ mt: 66, maxWidth: 846, mx: 'auto' }}>

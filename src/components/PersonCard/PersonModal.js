@@ -1,0 +1,132 @@
+import React, { useState } from 'react';
+import { Box, Button, Text } from 'theme-ui'
+import closeSvg from '../../images/close.svg';
+import Modal from 'react-modal';
+import Info from './Info';
+import Listener from '../Modals/Listener';
+import Photo from './Photo';
+
+Modal.setAppElement('#___gatsby');
+
+const PersonModal = ({ person, presentationDay }) => {
+  
+  const [isOpen, setOpened] = useState(false);
+
+  const closeModal = () => {
+    setOpened(false);
+  }
+
+  return (
+    <Box>
+      <Button 
+        onMouseDown={() => {setOpened(true)}}
+        variant='quaternary'
+      >
+        KNOW MORE
+      </Button>
+      <Modal
+        isOpen={isOpen}
+        onRequestClose={closeModal}
+        shouldCloseOnOverlayClick={true}
+        shouldCloseOnEsc={true}
+        style={{
+          content : { 
+            background:'linear-gradient(315deg, #D23B68 18.45%, #F0D440 104.3%)',
+            padding: '5px',
+            top : '50%',
+            left : '50%',
+            right : 'auto',
+            bottom : 'auto',
+            marginRight : '-50%',
+            transform : 'translate(-50%, -50%)',
+            border: 0,
+          },
+          overlay: {
+            display:'block',
+            zIndex: 1,
+            backgroundColor: 'rgba(19, 27, 58, 0.6)',
+            backdropFilter: 'blur(20px)',
+          }
+        }}
+      >
+        <Box 
+          sx={{ 
+            width: ['100%','100%','100%', '550px', '550px', '846px'], 
+            height: '100%', 
+            background: 'white', 
+            px:[15, 15, 15, 30],
+            py:[15, 15, 15, 40]
+          }}
+        >
+          <Box
+            sx={{
+              float: 'right',
+              cursor: 'pointer'
+            }} 
+            onMouseUp={() => {setOpened(false)}}
+          >
+            <img src={closeSvg} alt="X"/>
+          </Box>
+          <Box>
+            <Box
+              sx={{
+                display: 'flex',
+                flexWrap: 'wrap',
+              }}
+            >
+              <Photo photo={person.photo} name={person.name} insideModal={true}  />
+              <Info person={person} insideModal={true}/>
+            </Box>
+            <Box
+              sx={{
+                mt: [15, 15, 15, 15, 60]
+              }}
+            >
+              <Text
+                sx={{
+                  fontFamily: 'subHeading',
+                  color: 'pink',
+                  fontSize: ['24px','24px','24px','40px'],
+                  lineHeight: ['28px','28px','28px','41px'],
+                  textTransform: 'uppercase'
+                }}
+              >
+                {person.topic}
+              </Text>
+              <Text
+                sx={{
+                  fontFamily: 'subHeading',
+                  fontSize: ['20px','20px','20px', '20px','30px'],
+                  lineHeight: ['21px','21px','21px', '21px', '31px'],
+                  color: 'blue',
+                  mt: ['7px','7px','7px', '7px', 15]
+                }}
+              >
+                Day {presentationDay} - {person.hour}
+              </Text>
+              <Text
+                sx={{
+                  backgroundColor: 'lightestGray2',
+                  fontFamily: 'text',
+                  fontSize: '20px',
+                  lineHeight: '125%',
+                  color: 'paragraph',
+                  mt: 32,
+                  height: [130, 130, 130, 130, 148],
+                  overflowY: 'scroll'
+                }}
+              >
+                &emsp;{person.presentationDescription}
+              </Text>
+              <Box>
+                <Listener insideModal={true} />
+              </Box>
+            </Box>
+          </Box>
+        </Box>
+      </Modal>
+    </Box>
+  )
+};
+
+export default PersonModal;

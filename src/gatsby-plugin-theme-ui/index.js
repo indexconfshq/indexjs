@@ -9,6 +9,7 @@ export default {
         blue: '#131B3A',
         pink: '#D23B68',
         lightestGray: '#FAFAFA',
+        lightestGray2: '#F5F5F5',
         paragraph: '#000'
     },
     buttons: {
@@ -39,6 +40,21 @@ export default {
           background: '#D23B68',
           borderRadius: '117px',
           cursor: 'pointer',
+          color: 'white',
+          fontFamily: 'subHeading',
+          fontSize: 20, 
+          lineHeight: '21px',
+        },
+        quaternary: {
+          fontFamily: 'text',
+          fontSize: '13px',
+          lineHeight: '26px',
+          letterSpacing: '0.05em',
+          color: 'rgba(19, 27, 58, 0.7)',
+          border: 0,
+          p: 0,
+          background: 0,
+          cursor: 'pointer',
         }
     },
     links: {
@@ -62,7 +78,7 @@ export default {
         heading: 1.125,
         bigDate: {
           large: '157px',
-          medium: '124px',
+          medium: '121px',
           small: '83px'
         },
     },
