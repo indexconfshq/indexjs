@@ -39,22 +39,22 @@ const BigDate = () => {
     >
     <Container>
       <Flex
-          sx={{
-              py: [100, 150],
-              alignItems: 'center',
-              justifyContent: ['center', 'flex-start'],
-              backgroundRepeat: 'no-repeat',
-              maxWidth: 630,
-              flexWrap: 'wrap'
-          }}
+        sx={{
+          py: [60, 60, 60, 150],
+          alignItems: 'center',
+          justifyContent: ['center','center','center','flex-start'],
+          backgroundRepeat: 'no-repeat',
+          maxWidth: 630,
+          flexWrap: 'wrap'
+        }}
       >
         <Box
           sx={{
             textShadow: '2px 4px 4px #00B8CC',
             fontFamily: 'heading',
-            fontSize: [100, 150, 190], 
-            lineHeight: ['bigDate.small', 'bigDate.medium', 'bigDate.large'],
-            textAlign: ['center', 'left']
+            fontSize: [120, 120, 120, 190], 
+            lineHeight: ['bigDate.medium', 'bigDate.medium', 'bigDate.medium', 'bigDate.large'],
+            textAlign: ['center','center','center', 'left']
           }}
         >
           <Text>
@@ -68,10 +68,10 @@ const BigDate = () => {
           sx={{
             fontFamily: 'subHeading',
             color: 'primary',
-            fontSize: [29, 40], 
-            lineHeight: ['31px', '42px'],
-            mt: [40, 20],
-            textAlign: ['center', 'left']
+            fontSize: ['29px','29px','29px',40], 
+            lineHeight: ['31px','31px','31px','42px'],
+            mt: [25, 25, 25, 20],
+            textAlign: ['center', 'center', 'center', 'left']
           }}
         >
           <Text>
@@ -84,7 +84,7 @@ const BigDate = () => {
             color: 'primary',
             fontSize: 20, 
             lineHeight: '21px',
-            mt: '40px',
+            mt: ['25px','25px','25px','40px'],
             textAlign: ['center', 'left'],
             display: 'flex',
             flexWrap: 'wrap',

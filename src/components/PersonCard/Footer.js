@@ -1,7 +1,8 @@
 import React from 'react';
-import { Box, Text, Link } from 'theme-ui';
+import { Box, Text } from 'theme-ui';
+import PersonModal from './PersonModal';
 
-const Footer = ({ topic, topicURL  }) => (
+const Footer = ({ person, presentationDay }) => (
 
   <Box 
     sx={{
@@ -9,17 +10,17 @@ const Footer = ({ topic, topicURL  }) => (
       bottom: 10
     }}
   >
-    {topic &&
+    {person.topic &&
       <Box mt="9px">
         <Text 
           sx={{
             color: 'pink',
             fontFamily: 'subHeading',
-            fontSize: '20px',
+            fontSize: ['18px','18px','18px','20px'],
             lineHeight: '21px'
           }}
         >
-          {topic}
+          {person.topic}
         </Text>
         <Text
           sx={{
@@ -28,9 +29,7 @@ const Footer = ({ topic, topicURL  }) => (
             lineHeight: '26px',
           }}
         >
-          <Link href={topicURL} target="_blank" sx={{ textDecoration: 'none', color: 'rgba(19, 27, 58, 0.7)'}}>
-            KNOW MORE
-          </Link>
+          <PersonModal person={person} presentationDay={presentationDay} />
         </Text>
       </Box>}
   </Box>

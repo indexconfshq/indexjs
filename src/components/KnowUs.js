@@ -26,8 +26,6 @@ const KnowUs = () => {
             role
             github
             twitter
-            topic
-            topicURL
           }
           text
         }

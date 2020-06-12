@@ -8,7 +8,8 @@ const FormHeading = ({ text }) => {
             sx={{
               fontFamily: 'subHeading',
               color: 'pink',
-              fontSize: 40
+              fontSize: ['29px','29px','29px','40px'],
+              lineHeight: '41px',
             }}
         >
             {text}

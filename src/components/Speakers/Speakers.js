@@ -1,11 +1,9 @@
 import React from 'react';
-import { Box, Text } from 'theme-ui'
+import { Box } from 'theme-ui'
 import { graphql, useStaticQuery } from 'gatsby';
 import get from 'lodash/get';
 import Container from '../Container';
 import Title from '../Title';
-import PersonCard from '../PersonCard/PersonCard';
-import Subtitle from '../Subtitle';
 import Day from './Day';
 
 const Speakers = () => {
@@ -33,7 +31,8 @@ const Speakers = () => {
               github
               twitter
               topic
-              topicURL
+              hour
+              presentationDescription
             }
           }
         }
@@ -45,9 +44,9 @@ const Speakers = () => {
   
   return (
     <Box>
-      {data.alldays.map( (day, index) => (<Box 
+      {data.alldays.map( (eachDay, index) => (<Box 
           sx={{
-            backgroundColor: day.dayColor, 
+            backgroundColor: eachDay.dayColor, 
             pb: [55, 55, 55, 105]
           }}
         >
@@ -55,7 +54,7 @@ const Speakers = () => {
             {index === 0 &&
               <Title title={data.title} paddingBottom='0px' textColor="yellow" />}
             <Box>
-              <Day day={day} />
+              <Day day={eachDay} />
             </Box>
           </Container>
         </Box>

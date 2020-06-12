@@ -9,7 +9,7 @@ import FormFieldLabel from '../Forms/label';
 
 Modal.setAppElement('#___gatsby');
 
-const Listener = ({ buttonText }) => {
+const Listener = ({ buttonText = 'Enroll', insideModal = false }) => {
 
   const [isOpenListener, setOpenedListener] = useState(false);
   
@@ -19,17 +19,19 @@ const Listener = ({ buttonText }) => {
 
   return (  
     <Box>
-      <Button
-        variant='tertiary'
-        onMouseDown={() => {setOpenedListener(true)}}
-        sx={{
-          mt: [20, 20, 0, 0, 0 ,0],
-          ml: [0, 0, 0, 20, 20, 20],
-          mr: [0, 0, 20, 0, 0, 0]
-        }}
-      >
-        {buttonText}
-      </Button>
+        <Box sx={{ textAlign: insideModal ? ['right','right','right','left'] : '' }}>
+        <Button
+          variant='tertiary'
+          onMouseDown={() => {setOpenedListener(true)}}
+          sx={{
+            mt: insideModal ? 20 : [15, 15, 0, 0, 0 ,0],
+            ml: insideModal ? 0 : [0, 0, 0, 20, 20, 20],
+            mr: insideModal ? 0 : [0, 0, 20, 0, 0, 0],
+          }}
+        >
+          {buttonText}
+        </Button>
+      </Box>
       <Modal
         isOpen={isOpenListener}
         onRequestClose={closeModalListener}

@@ -13,8 +13,6 @@ persons:
     role:  Software Engineer aka Enthusiastic Developer… Problem Solver 
     github: https://github.com/luisFilipePT
     twitter: https://twitter.com/david-alecrim
-    topic: You Don't Know JS
-    topicURL: https://www.google.com
   - photo: /wilson-rodrigues.png
     name: Wilson Rodrigues
     role: Software Engineer

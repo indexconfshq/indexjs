@@ -3,22 +3,18 @@ import { Box } from 'theme-ui';
 import Photo from './Photo';
 import Body from './Body';
 
-const PersonCard = ({ person, gradientLTR = true, index }) => (
+const PersonCard = ({ person, gradientLTR = true, index, presentationDay }) => (
   <Box
     sx={{
       position: 'relative',
-      mt:[70,70,70, (index * 45)/1.2] ,
+      mt:[70,70,70, (index * 45)/1.5] ,
     }}
   >
     <Photo photo={person.photo} name={person.name} />
     <Body 
-      name={person.name} 
-      role={person.role} 
-      github={person.github} 
-      twitter={person.twitter} 
-      topic={person.topic}
-      topicURL={person.topicURL}
+      person={person}
       gradientLTR={gradientLTR}
+      presentationDay={presentationDay}
     />
   </Box>
 )

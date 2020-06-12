@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Text } from 'theme-ui';
+import { Box } from 'theme-ui';
 import Subtitle from '../Subtitle';
 import PersonCard from '../PersonCard/PersonCard';
 
@@ -22,7 +22,7 @@ const Day = ({ day }) => (
       }}
     >
       {day.persons.map( (person, index) => (
-        <PersonCard person={person} gradientLTR={day.ltr} index={index} />
+        <PersonCard person={person} gradientLTR={day.ltr} index={index} presentationDay={day.day} />
       ))}
     </Box>
   </Box>
