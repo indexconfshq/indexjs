@@ -54,22 +54,29 @@ const Location = () => {
           my: ['25px','25px','25px','90px'],
           ml: 'auto',
           position: 'relative',
-          width: ['100%','100%','100%','835px'],
+          width: ['100%','100%','100%','715px','835px'],
           height: ['auto','auto','auto','565px'],
         }}
       >
           <Box
             sx={{
               pb: '90px',
-              backgroundColor: 'white',
+              backgroundColor: 'lightestGray',
               clipPath: ['none','none','polygon(0 0, 100% 0, 100% 100%, 9% 100%, 0 91%)'],
             }}
           >
             <Box>
-              <Title title={data.title} paddingTop='43px' paddingBottom='46px' textColor='pink' alignment='left' />
-              <Box 
+              <Box
                 sx={{
-                  px: '35px',
+                  px: ['0px','35px','35px','100px'],
+                  mx: 'auto'
+                }}
+              >
+                <Title title={data.title} paddingTop='43px' paddingBottom='46px' textColor='pink' alignment='left' />
+              </Box>
+              <Box
+                sx={{
+                  px: ['35px','35px','35px','100px'],
                   mx: 'auto'
                 }}
               >
