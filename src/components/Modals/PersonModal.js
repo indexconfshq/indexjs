@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { Box, Button, Text } from 'theme-ui'
 import closeSvg from '../../images/close.svg';
 import Modal from 'react-modal';
-import Info from './Info';
-import Listener from '../Modals/Listener';
-import Photo from './Photo';
+import Info from '../PersonCard/Info';
+import Listener from './Listener';
+import Photo from '../PersonCard/Photo';
 
 Modal.setAppElement('#___gatsby');
 
@@ -52,7 +52,8 @@ const PersonModal = ({ person, presentationDay }) => {
         <Box 
           sx={{ 
             width: ['100%','100%','100%', '550px', '550px', '846px'], 
-            height: '100%', 
+            height: ['86vh','86vh','86vh','100%'], 
+            overflow:'scroll',
             background: 'white', 
             px:[15, 15, 15, 30],
             py:[15, 15, 15, 40]
@@ -86,8 +87,8 @@ const PersonModal = ({ person, presentationDay }) => {
                 sx={{
                   fontFamily: 'subHeading',
                   color: 'pink',
-                  fontSize: ['24px','24px','24px','40px'],
-                  lineHeight: ['28px','28px','28px','41px'],
+                  fontSize: ['24px','24px','40px','40px'],
+                  lineHeight: ['28px','28px','40px','41px'],
                   textTransform: 'uppercase'
                 }}
               >
@@ -112,7 +113,7 @@ const PersonModal = ({ person, presentationDay }) => {
                   lineHeight: '125%',
                   color: 'paragraph',
                   mt: 32,
-                  height: [130, 130, 130, 130, 148],
+                  height: [130, 130, 250, 130, 148],
                   overflowY: 'scroll'
                 }}
               >
