@@ -22,7 +22,7 @@ const Day = ({ day }) => (
       }}
     >
       {day.persons.map( (person, index) => (
-        <PersonCard person={person} gradientLTR={day.ltr} index={index} presentationDay={day.day} />
+        <PersonCard key={person.name + index} person={person} gradientLTR={day.ltr} index={index} presentationDay={day.day} />
       ))}
     </Box>
   </Box>
