@@ -19,7 +19,6 @@ const Header = () => {
                         alignItems: 'center',
                         justifyContent: 'flex-end'
                     }}
-
                 >
                     <SocialIcon variant="instagram" />
                     <SocialIcon variant="twitter" />

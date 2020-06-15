@@ -39,6 +39,7 @@ const Location = () => {
   
   return (
     <Box
+      id="location"
       sx={{
         backgroundImage: `url(${stadiumBackground})`,
         backgroundSize: 'cover',

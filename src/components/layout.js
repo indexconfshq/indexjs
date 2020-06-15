@@ -1,8 +1,10 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 
+import Footer from '../components/Footer/Footer';
 import './layout.css'
-import Header from './header'
+// import Header from './old-header'
+import Header from './Header/Header'
 
 const Layout = ({ children }) => {
     return (
@@ -22,6 +24,7 @@ const Layout = ({ children }) => {
             >
                 {children}
             </main>
+            <Footer /> 
             {/*<footer*/}
             {/*    sx={{*/}
             {/*        width: '100%',*/}
