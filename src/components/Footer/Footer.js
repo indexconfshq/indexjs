@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import get from 'lodash/get';
-import { Box, Link, Text } from 'theme-ui'
+import { Box } from 'theme-ui'
 import Img from 'gatsby-image';
 import Title from '../Title'
 import Subtitle from '../Subtitle'
