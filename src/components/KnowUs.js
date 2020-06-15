@@ -37,6 +37,7 @@ const KnowUs = () => {
   
   return (
     <Box 
+      id="know-us"
       sx={{
         backgroundColor: 'lightestGray', 
         mb: 92

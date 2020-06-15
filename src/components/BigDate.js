@@ -29,6 +29,7 @@ const BigDate = () => {
   return(
     
     <Box
+      id="home"
       sx={{
         width: '100% !important',
         backgroundSize: 'cover',

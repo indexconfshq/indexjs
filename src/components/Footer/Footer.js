@@ -2,7 +2,6 @@ import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import get from 'lodash/get';
 import { Box } from 'theme-ui'
-import Img from 'gatsby-image';
 import Title from '../Title'
 import Subtitle from '../Subtitle'
 import Container from '../Container';
@@ -47,6 +46,7 @@ const Footer = () => {
 
   return (
     <Box
+      id="sponsors"
       sx={{
         backgroundColor: 'blue',
         pb: '25px'
