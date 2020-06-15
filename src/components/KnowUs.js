@@ -46,7 +46,7 @@ const KnowUs = () => {
         <Title title={data.title} paddingBottom='95px' />
         <Box sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-evenly', alignItems: 'center' }}>
           {data.persons.map( (person, index) => (
-            <PersonCard person={person} gradientLTR={data.ltr} index={index} />
+            <PersonCard key={person.name + index} person={person} gradientLTR={data.ltr} index={index} />
           ))}
         </Box>
         <Box sx={{ mt: 66, maxWidth: 846, mx: 'auto' }}>

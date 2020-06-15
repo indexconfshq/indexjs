@@ -25,8 +25,8 @@ const SponsorSection = ({ sectionTitle, sponsorSection, hasMargin = false }) => 
         flexWrap: 'wrap',
       }}
     >
-      {sponsorSection.map( sponsor => (
-        <Box key={sponsor.name} sx={{ maxWidth: '250px', px: ['20px','20px','20px','20px','20px','50px'], mt: '30px'}}>
+      {sponsorSection.map( (sponsor, index) => (
+        <Box key={sponsor.name + index} sx={{ maxWidth: '250px', px: ['20px','20px','20px','20px','20px','50px'], mt: '30px'}}>
           <Link href={sponsor.link} target="_blank">
             <Img fixed={sponsor.logo.childImageSharp.fixed}  alt={sponsor.name} />
           </Link>

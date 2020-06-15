@@ -99,6 +99,7 @@ const Places = ({ places, knowTheCity }) => {
             >
               {places.map( (place, index) => (
                 <Box
+                  key={place.name}
                   sx={{
                     width: '100%',
                     mt: index === 0 && '-1px' ,
@@ -108,7 +109,6 @@ const Places = ({ places, knowTheCity }) => {
                   }}
                 >
                   <Box 
-                    key="place.name"
                     sx={{
                       backgroundColor: index % 2 !== 0 ? 'lightestGray' : 'none',
                       ml: [0, 0, 0, 15, 15, 60 + (index * 120)],

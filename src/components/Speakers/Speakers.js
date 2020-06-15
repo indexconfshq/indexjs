@@ -44,7 +44,9 @@ const Speakers = () => {
   
   return (
     <Box>
-      {data.alldays.map( (eachDay, index) => (<Box 
+      {data.alldays.map( (eachDay, index) => (
+      <Box
+          key={index}
           sx={{
             backgroundColor: eachDay.dayColor, 
             pb: [55, 55, 55, 105]
