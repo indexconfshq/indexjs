@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Box, Button, Textarea } from 'theme-ui'
-import FormHeading from '../Forms/FormHeading';
+import FormHeading from '../Forms/formHeading';
 import FormContainer from '../Forms/FormContainer';
 import closeSvg from '../../images/close.svg';
 import Modal from 'react-modal';
