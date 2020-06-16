@@ -96,8 +96,10 @@ const Location = () => {
               <Box>
                 <Box
                   sx={{
-                    px: ['0px','35px','35px','100px'],
-                    mx: 'auto'
+                    px: ['0px','0px','35px','100px'],
+                    mx: 'auto',
+                    display: 'flex',
+                    justifyContent: ['center','center','flex-start']
                   }}
                 >
                   <Title title={data.title} paddingTop='43px' paddingBottom='46px' textColor='pink' alignment='left' />
