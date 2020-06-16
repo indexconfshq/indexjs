@@ -1,5 +1,5 @@
 ---
-id: footer
+id: sponsors
 title: Sponsors
 subtitle: Special Thanks To Our Sponsors
 goldenSponsors:
