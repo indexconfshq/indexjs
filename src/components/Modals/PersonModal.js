@@ -52,8 +52,9 @@ const PersonModal = ({ person, presentationDay }) => {
         <Box 
           sx={{ 
             width: ['100%','100%','100%', '550px', '550px', '846px'], 
-            height: ['86vh','86vh','86vh','100%'], 
-            overflow:'scroll',
+            maxHeight: ['86vh','86vh','86vh','86vh','100%'], 
+            height: '100%',
+            overflowY:'scroll',
             background: 'white', 
             px:[15, 15, 15, 30],
             py:[15, 15, 15, 40]
