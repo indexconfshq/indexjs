@@ -23,7 +23,7 @@ const INITIAL_STATE = {
 const Form = ({ state, handleSubmit, onFieldChange }) => (
 
   <FormContainer handleSubmit={handleSubmit}>
-    <FormHeading text="I want to speak" />
+    <FormHeading text="Keep me informed" />
     <Box sx={{ mt: '25px' }}>
       <FormField
         required

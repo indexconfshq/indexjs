@@ -114,8 +114,9 @@ const PersonModal = ({ person, presentationDay }) => {
                   lineHeight: '125%',
                   color: 'paragraph',
                   mt: 32,
+                  p:'10px',
                   height: [130, 130, 250, 130, 148],
-                  overflowY: 'scroll'
+                  overflowY: ['scroll','scroll','auto'],
                 }}
               >
                 &emsp;{person.presentationDescription}
