@@ -3,6 +3,7 @@ id: location
 title: LOCATION
 subtitle: JOIN US
 knowTheCity: Know The City
+bgimg: /stadium_background.png
 places:
   - image: /stadium.png
     name: Stadium
