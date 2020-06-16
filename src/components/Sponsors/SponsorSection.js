@@ -20,7 +20,7 @@ const SponsorSection = ({ sectionTitle, sponsorSection, hasMargin = false }) => 
     <Box
       sx={{
         display: 'flex',
-        justifyContent: 'flex-start',
+        justifyContent: ['center','center','center','center','flex-start'],
         alignItems: 'center',
         flexWrap: 'wrap',
       }}

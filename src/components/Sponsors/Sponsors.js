@@ -7,11 +7,11 @@ import Subtitle from '../Subtitle'
 import Container from '../Container';
 import SponsorSection from './SponsorSection';
 
-const Footer = () => {
+const Sponsors = () => {
 
   const queryResults = useStaticQuery(graphql`
-    query Footer {
-      markdownRemark(frontmatter: { id: { eq: "footer" } }) {
+    query Sponsors {
+      markdownRemark(frontmatter: { id: { eq: "sponsors" } }) {
         frontmatter {
           title
           subtitle
@@ -49,11 +49,12 @@ const Footer = () => {
       id="sponsors"
       sx={{
         backgroundColor: 'blue',
-        pb: '25px'
+        pb: '50px',
+        mb: '-1px'
       }}
     >
       <Container>
-        <Title title={data.title} textColor='yellow' paddingTop='17px' paddingBottom='27px' />
+        <Title title={data.title} textColor='yellow' paddingTop='50px' paddingBottom='27px' />
         <Subtitle subtitle={data.subtitle} paddingBottom='75px' />
 
         <SponsorSection sectionTitle="GOLDEN" sponsorSection={data.goldenSponsors} />
@@ -64,4 +65,4 @@ const Footer = () => {
   )
 };
 
-export default Footer;
+export default Sponsors;
