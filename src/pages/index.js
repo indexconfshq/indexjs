@@ -11,6 +11,7 @@ import BigDate from '../components/BigDate'
 import KnowUs from '../components/KnowUs';
 import Speakers from '../components/Speakers/Speakers';
 import Location from '../components/Location';
+import Sponsors from '../components/Sponsors/Sponsors';
 
 const Index = () => {
     return (
@@ -20,6 +21,7 @@ const Index = () => {
             <KnowUs />
             <Speakers />
             <Location />
+            <Sponsors />
             {/* <Grid columns={[1, 1, 2]}>
                 <motion.div
                     initial={{ opacity: 0.2, scale: 0.7 }}
