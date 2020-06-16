@@ -57,9 +57,11 @@ const Places = ({ places, knowTheCity }) => {
       >
         <Box 
           sx={{ 
-            width: ['100%','100%','100%', '100%', '100%', '100%', '100%'], 
-            height: ['86vh','86vh','86vh', '100vh'], 
+            width: ['100%','100%','100%', '100%', '100%', '100%', '100%'],
+            maxHeight: ['86vh','86vh','86vh','86vh','100%'], 
+            height: '100%',
             overflowY:'scroll',
+            overflowX: 'hidden',
             background: '#f8cd00', 
             mx:'auto',
             py:[15, 15, 15, 40]

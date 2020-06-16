@@ -3,7 +3,6 @@ import { jsx } from 'theme-ui'
 
 import Footer from './Footer';
 import './layout.css'
-// import Header from './old-header'
 import Header from './Header/Header'
 
 const Layout = ({ children }) => {
@@ -24,14 +23,7 @@ const Layout = ({ children }) => {
             >
                 {children}
             </main>
-            <Footer /> 
-            {/*<footer*/}
-            {/*    sx={{*/}
-            {/*        width: '100%',*/}
-            {/*    }}*/}
-            {/*>*/}
-            {/*    @indexconf*/}
-            {/*</footer>*/}
+            <Footer />
         </div>
     )
 }

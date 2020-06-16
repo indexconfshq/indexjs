@@ -14,7 +14,7 @@ import FadeScaleIn from '../components/Animated/FadeScaleIn'
 import SlideInOutFade from '../components/Animated/SlideInOutFade'
 import FormFeedback from '../components/Forms/FormFeedback'
 import FormHeading from '../components/Forms/formHeading'
-import FormContainer from '../components/Forms/FormContainer'
+import FormContainer from '../components/Forms/formContainer'
 import { SUBMISSION_STATES } from '../components/Forms/constants'
 
 const INITIAL_STATE = {

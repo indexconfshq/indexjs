@@ -37,6 +37,7 @@ const Header = () => {
             zIndex: 2,
             display: 'flex',
             justifyContent: 'flex-start',
+            mt: [0,0,0,25],
             height: ['60px','60px','60px','100px'],
             
           }}

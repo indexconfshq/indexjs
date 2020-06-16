@@ -1,26 +1,17 @@
 import React from 'react'
-import { Box, Flex } from 'theme-ui'
+import { Box } from 'theme-ui'
 
-import FormButtonLink from './FormButtonLink'
 import FormHeading from './formHeading'
+import FormSubHeading from './FormSubHeading'
 
-const FormFeedback = ({ message, buttonText, buttonRoute }) => {
-    return (
-        <Box>
-            <Box sx={{ mt: '120px', p: [24, 36], bg: '#EFB300' }}>
-                <FormHeading {...{ text: message }} />
-            </Box>
-            <Flex
-                sx={{
-                    justifyContent: 'flex-end',
-                    p: 40,
-                    fontFamily: 'system-ui',
-                }}
-            >
-                <FormButtonLink {...{ to: buttonRoute, text: buttonText }} />
-            </Flex>
-        </Box>
-    )
-}
+const FormFeedback = ({ message, message2 }) => (
+
+    <Box>
+      <Box sx={{ width: '100%', height: '100%' }}>
+        <FormHeading {...{ text: message }} />
+        <FormSubHeading {...{ text: message2 }} />
+      </Box>
+    </Box>
+)
 
 export default FormFeedback

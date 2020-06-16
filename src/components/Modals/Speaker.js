@@ -1,7 +1,7 @@
 import React, { useState, useReducer } from 'react';
 import { Box, Button, Textarea } from 'theme-ui'
 import FormHeading from '../Forms/formHeading';
-import FormContainer from '../Forms/FormContainer';
+import FormContainer from '../Forms/formContainer';
 import closeSvg from '../../images/close.svg';
 import Modal from 'react-modal';
 import FormField from '../Forms/FormField';
@@ -19,41 +19,39 @@ const INITIAL_STATE = {
   more: '',
 }
 
-
 const Form = ({ state, handleSubmit, onFieldChange }) => (
 
   <FormContainer handleSubmit={handleSubmit}>
     <FormHeading text="I want to speak" />
     <Box sx={{ mt: '25px' }}>
       <FormField
-            required
-            label="* How can we call you?"
-            placeholder="name"
-            value={state.name}
-            onChange={onFieldChange('name')}
-        />
-        
-      <FormField
-          required
-          label="* Where can we reach you"
-          placeholder="email"
-          value={state.email}
-          onChange={onFieldChange('email')}
+        required
+        label="* How can we call you?"
+        placeholder="name"
+        value={state.name}
+        onChange={onFieldChange('name')}
       />
       <FormField
-          required
-          label="* What's your talk subject"
-          placeholder="ex: css in JS the future"
-          value={state.subject}
-          onChange={onFieldChange('subject')}
+        required
+        label="* Where can we reach you"
+        placeholder="email"
+        value={state.email}
+        onChange={onFieldChange('email')}
       />
-      <FormFieldLabel {...{ label: 'Anything else?' }} />
-      <Textarea
+      <Box>
+        <FormFieldLabel {...{ label: 'Anything else?' }} />
+        <Textarea
           placeholder="Tell us more"
-          value={onFieldChange('more')}
+          onChange={onFieldChange('more')}
+          value={state.more}
           rows={3}
-          color='black'
-      />
+          sx={{ 
+            fontFamily: 'text',
+            fontSize: '18px',
+            color: 'paragraph'
+          }} 
+        />
+      </Box>
     </Box>
   </FormContainer>
 );
@@ -143,8 +141,9 @@ const Speaker = ({ buttonText }) => {
         <Box 
           sx={{ 
             width: ['100%','100%','100%', '550px', '550px', '846px'],
-            height: ['86vh','86vh','86vh','100%'], 
-            overflow:'scroll',
+            maxHeight: ['86vh','86vh','86vh','86vh','100%'], 
+            height: '100%',
+            overflowY: ['scroll','scroll','auto','auto','hidden'],
             background: 'white', 
             p:'15px' 
           }}
@@ -172,9 +171,8 @@ const Speaker = ({ buttonText }) => {
             {submissionState ===
               SUBMISSION_STATES.SUBMITTED_SUCCESS && (
                 <FormFeedback
-                  message="Thank's for reaching out we will get back to you ASAP"
-                  buttonText="home"
-                  buttonRoute="/"
+                  message="Thank's for reaching out."
+                  message2="We will get back to you ASAP"
                 />
             )}
         </Box>
