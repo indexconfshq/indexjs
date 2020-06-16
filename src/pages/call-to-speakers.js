@@ -8,13 +8,13 @@ import { Grid, Box, Textarea } from 'theme-ui'
 import logo from '../images/logo.svg'
 import Layout from '../components/layout'
 import SEO from '../components/SEO'
-import FormFieldLabel from '../components/Forms/label'
-import FormField from '../components/Forms/field'
+import FormFieldLabel from '../components/Forms/FormFieldLabel'
+import FormField from '../components/Forms/FormField'
 import FadeScaleIn from '../components/Animated/FadeScaleIn'
 import SlideInOutFade from '../components/Animated/SlideInOutFade'
-import FormFeedback from '../components/Forms/formFeeback'
-import FormHeading from '../components/Forms/formHeading'
-import FormContainer from '../components/Forms/formContainer'
+import FormFeedback from '../components/Forms/FormFeedback'
+import FormHeading from '../components/Forms/FormHeading';
+import FormContainer from '../components/Forms/FormContainer'
 import { SUBMISSION_STATES } from '../components/Forms/constants'
 
 const INITIAL_STATE = {

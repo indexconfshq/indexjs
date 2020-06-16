@@ -1,7 +1,7 @@
 import React from 'react'
 import { Box, Flex } from 'theme-ui'
 
-import FormButtonLink from './buttonLink'
+import FormButtonLink from './FormButtonLink'
 import FormHeading from './formHeading'
 
 const FormFeedback = ({ message, buttonText, buttonRoute }) => {

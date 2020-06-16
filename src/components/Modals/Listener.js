@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { Box, Button, Textarea } from 'theme-ui'
-import FormHeading from '../Forms/formHeading';
-import FormContainer from '../Forms/formContainer';
+import FormHeading from '../Forms/FormHeading';
+import FormContainer from '../Forms/FormContainer';
 import closeSvg from '../../images/close.svg';
 import Modal from 'react-modal';
-import FormField from '../Forms/field';
-import FormFieldLabel from '../Forms/label';
+import FormField from '../Forms/FormField';
+import FormFieldLabel from '../Forms/FormFieldLabel';
+import FormFeedback from '../Forms/FormFeedback'
 
 Modal.setAppElement('#___gatsby');
 

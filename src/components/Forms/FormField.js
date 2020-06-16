@@ -1,7 +1,7 @@
 import { Box, Input } from 'theme-ui'
 import React from 'react'
 
-import FormFieldLabel from './label'
+import FormFieldLabel from './FormFieldLabel'
 
 const FormField = ({ required, label, placeholder, value, onChange }) => (
     <Box>

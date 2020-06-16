@@ -1,7 +1,7 @@
 import React from 'react'
 import { Box, Flex } from 'theme-ui'
 
-import FormButton from './button'
+import FormButton from './FormButton' 
 
 const FormContainer = ({ children, handleSubmit }) => {
     return (

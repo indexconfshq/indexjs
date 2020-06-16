@@ -55,7 +55,7 @@ const Header = () => {
               <Box
                 sx={{
                   position: 'absolute',
-                  maxWidth: ['60%','60%','60%','218px'],
+                  maxWidth: ['50%','60%','60%','218px'],
                   width: '100%',
                   height: ['60px','60px','60px','100px'],
                   backgroundColor: 'blue',
@@ -66,14 +66,17 @@ const Header = () => {
                   zIndex: 2,
                 }}
               >
-                <AnchorLink to="/#home">
-                  <Image src={Logo} sx={{ width: ['45px','45px','45px', '70px'], height: ['45px','45px','45px','70px'], mx:['auto', 32] }} />
-                </AnchorLink>
+                <Box
+                  sx={{
+                    mx:['auto', 0]
+                  }}
+                >
+                  <AnchorLink to="/#home">
+                    <Image src={Logo} sx={{ width: ['45px','45px','45px', '70px'], height: ['45px','45px','45px','70px'], mx:['auto', 32] }} />
+                  </AnchorLink>
+                </Box>
               </Box>
-              <Box
-                sx={{
-                }}
-              >
+              <Box>
                 {isMobile ? <RightSideMobile /> : <RightSideDesktop />}
               </Box>
             </Box>
