@@ -12,7 +12,7 @@ const Body = ({ gradientLTR, person, presentationDay }) => (
       width: ['100%',305,305,305],
       p: '10px',
       borderRadius: '4px',
-      clipPath: 'polygon(100% 0%, 100% 78%, 81% 100%, 0 100%, 0 0)'
+      clipPath: 'polygon(100% 0%, 100% 78%, 81% 100%, 0 100%, 0 0)',
     }}
   >
     <Box 

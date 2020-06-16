@@ -114,7 +114,7 @@ const Speaker = ({ buttonText }) => {
         {buttonText}
       </Button>
       <Modal
-        isOpen={isOpenSpeaker}
+        isOpen={true}
         onRequestClose={closeModalSpeaker}
         shouldCloseOnOverlayClick={true}
         shouldCloseOnEsc={true}
@@ -131,9 +131,11 @@ const Speaker = ({ buttonText }) => {
             border: 0,
           },
           overlay: {
-            display:'block',
-            zIndex: 1,
+            display: 'block',
+            zIndex: isOpenSpeaker ? 1 : 0,
+            opacity: isOpenSpeaker ? 1 : 0,
             backgroundColor: 'rgba(19, 27, 58, 0.6)',
+            transition: 'opacity 0.200s ease, z-index 0.200s ease, backdrop-filter 0.200s ease',
             backdropFilter: 'blur(20px)',
           }
         }}

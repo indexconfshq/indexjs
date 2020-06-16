@@ -25,6 +25,10 @@ export default {
           background: '#00B8CC',
           borderRadius: '117px',
           cursor: 'pointer',
+          '&:hover': {
+            background: '#008291',
+          },
+          transition: 'background 0.200s ease'
         },
         tertiary: {
           width: '197px',
@@ -36,6 +40,10 @@ export default {
           fontFamily: 'subHeading',
           fontSize: 20, 
           lineHeight: '21px',
+          '&:hover': {
+            background: '#a32e51',
+          },
+          transition: 'background 0.200s ease'
         },
         quaternary: {
           fontFamily: 'text',

@@ -10,6 +10,7 @@ import RightSideMobile from './RightSideMobile';
 const Header = () => {
 
   const [isMobile, setMobile] = useState(false);
+  
   function checkMobile(x) {
     setMobile(x.matches);
   }
@@ -22,6 +23,27 @@ const Header = () => {
       x.removeListener(checkMobile);
     };
   }, []);
+
+  const [shrinkHeader, setShrinkHeader] = useState(false);
+
+  const updateOnScroll = () => {
+
+    if (window.pageYOffset !== 0) {
+      if (!isMobile) {
+        setShrinkHeader(true);
+        console.log("SHOULD SHRINK TO TRUE", shrinkHeader);
+      }
+    } else {
+      setShrinkHeader(false);
+      console.log("SHOULD SHRINK TO FALSE", shrinkHeader);
+    }
+
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', updateOnScroll);
+    return () => window.removeEventListener('scroll', updateOnScroll);
+  });
 
   return (
     <Box>
@@ -37,9 +59,10 @@ const Header = () => {
             zIndex: 2,
             display: 'flex',
             justifyContent: 'flex-start',
-            mt: [0,0,0,25],
-            height: ['60px','60px','60px','100px'],
-            
+            mt: shrinkHeader ? 0 : [0,0,0,25],
+            maxHeight: shrinkHeader ? '50px' : ['60px','60px','60px','100px'],
+            height: '100%',
+            transition: 'max-height 0.200s ease-in-out, margin-top 0.200s ease'
           }}
         > 
           <Container
@@ -58,7 +81,8 @@ const Header = () => {
                   position: 'absolute',
                   maxWidth: ['50%','60%','60%','218px'],
                   width: '100%',
-                  height: ['60px','60px','60px','100px'],
+                  height: shrinkHeader && !isMobile ? '50px' : ['60px','60px','60px','100px'],
+                  transition: 'height 0.200s ease-in-out',
                   backgroundColor: 'blue',
                   clipPath: ['none','polygon(0 0, 65% 0, 100% 100%, 0% 100%)'],
                   display: 'flex',
@@ -69,16 +93,27 @@ const Header = () => {
               >
                 <Box
                   sx={{
-                    mx:['auto', 0]
+                    mx:['auto', 0],
                   }}
                 >
                   <AnchorLink to="/#home">
-                    <Image src={Logo} sx={{ width: ['45px','45px','45px', '70px'], height: ['45px','45px','45px','70px'], mx:['auto', 32] }} />
+                    <Image 
+                      src={Logo} 
+                      sx={{ 
+                        width: ['45px','45px','45px', '70px'], 
+                        height: shrinkHeader && !isMobile ? '45px' : ['45px','45px','45px','70px'], 
+                        transition: 'height 0.200s ease-in-out',
+                        mx:['auto', 32],
+                        display: 'flex',
+                        justifyContent: 'flex-start',
+                        alignItems: 'center',
+                      }} 
+                    />
                   </AnchorLink>
                 </Box>
               </Box>
               <Box>
-                {isMobile ? <RightSideMobile /> : <RightSideDesktop />}
+                {isMobile ? <RightSideMobile /> : <RightSideDesktop shrinkHeader={shrinkHeader} isMobile={isMobile} />}
               </Box>
             </Box>
           </Container>

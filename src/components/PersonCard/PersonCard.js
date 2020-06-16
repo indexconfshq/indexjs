@@ -7,7 +7,11 @@ const PersonCard = ({ person, gradientLTR = true, index = 1, presentationDay }) 
   <Box
     sx={{
       position: 'relative',
-      mt:[70,70,70, (index * 45)/1.5] ,
+      mt:[70,70,70, (index * 45)/1.5],
+      '&:hover': {
+        transform: [null, null, null, null, 'scale(1.1)'],
+      }, 
+      transition: 'transform 0.200s ease'
     }}
   >
     <Photo photo={person.photo} name={person.name} />

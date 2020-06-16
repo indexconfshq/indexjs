@@ -121,7 +121,7 @@ const Listener = ({ buttonText = 'Enroll', insideModal = false }) => {
         </Button>
       </Box>
       <Modal
-        isOpen={isOpenListener}
+        isOpen={true}
         onRequestClose={closeModalListener}
         shouldCloseOnOverlayClick={true}
         shouldCloseOnEsc={true}
@@ -138,10 +138,12 @@ const Listener = ({ buttonText = 'Enroll', insideModal = false }) => {
             border: 0,
           },
           overlay: {
-            display:'block',
-            zIndex: 1,
+            display: 'block',
+            zIndex: isOpenListener ? 1 : 0,
+            opacity: isOpenListener ? 1 : 0,
             backgroundColor: 'rgba(19, 27, 58, 0.6)',
             backdropFilter: 'blur(20px)',
+            transition: 'opacity 0.200s ease, z-index 0.200s ease, backdrop-filter 0.200s ease',
           }
         }}
       >

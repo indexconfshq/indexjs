@@ -53,7 +53,7 @@ const BigDate = () => {
         <Container>
           <Flex
             sx={{
-              py: [60, 60, 60, 150],
+              py: [90, 90, 90, 150],
               alignItems: 'center',
               justifyContent: ['center','center','center','flex-start'],
               backgroundRepeat: 'no-repeat',

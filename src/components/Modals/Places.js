@@ -31,7 +31,7 @@ const Places = ({ places, knowTheCity }) => {
         {knowTheCity}
       </Button>
       <Modal
-        isOpen={isOpen}
+        isOpen={true}
         onRequestClose={closeModal}
         shouldCloseOnOverlayClick={true}
         shouldCloseOnEsc={true}
@@ -48,19 +48,21 @@ const Places = ({ places, knowTheCity }) => {
             border: 0,
           },
           overlay: {
-            display:'block',
-            zIndex: 1,
+            display: 'block',
+            zIndex: isOpen ? 1 : 0,
+            opacity: isOpen ? 1 : 0,
             backgroundColor: 'rgba(19, 27, 58, 0.6)',
             backdropFilter: 'blur(20px)',
+            transition: 'opacity 0.200s ease, z-index 0.200s ease, backdrop-filter 0.200s ease',
           }
         }}
       >
         <Box 
           sx={{ 
-            width: ['100%','100%','100%', '100%', '100%', '100%', '100%'],
-            maxHeight: ['86vh','86vh','86vh','86vh','100%'], 
+            width: '100%',
+            maxHeight: ['86vh','86vh','86vh','86vh','100vh'], 
             height: '100%',
-            overflowY:'scroll',
+            overflowY: 'scroll',
             overflowX: 'hidden',
             background: '#f8cd00', 
             mx:'auto',

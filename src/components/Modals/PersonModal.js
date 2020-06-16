@@ -25,7 +25,7 @@ const PersonModal = ({ person, presentationDay }) => {
         KNOW MORE
       </Button>
       <Modal
-        isOpen={isOpen}
+        isOpen={true}
         onRequestClose={closeModal}
         shouldCloseOnOverlayClick={true}
         shouldCloseOnEsc={true}
@@ -42,10 +42,12 @@ const PersonModal = ({ person, presentationDay }) => {
             border: 0,
           },
           overlay: {
-            display:'block',
-            zIndex: 1,
             backgroundColor: 'rgba(19, 27, 58, 0.6)',
             backdropFilter: 'blur(20px)',
+            display: 'block',
+            zIndex: isOpen ? 1 : 0,
+            opacity: isOpen ? 1 : 0,
+            transition: 'opacity 0.200s ease, z-index 0.200s ease, backdrop-filter 0.200s ease',
           }
         }}
       >

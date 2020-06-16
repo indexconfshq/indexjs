@@ -45,7 +45,7 @@ const RightSideMobile = () => {
         <FaBars />
       </Box>
       <Modal
-        isOpen={isOpen}
+        isOpen={true}
         onRequestClose={closeModal}
         shouldCloseOnOverlayClick={true}
         shouldCloseOnEsc={true}
@@ -60,13 +60,15 @@ const RightSideMobile = () => {
             marginRight : '-50%',
             transform : 'translate(-50%, -50%)',
             border: 0,
-            width: '100%'
+            width: '100%',
+            transition: 'background 0.200s ease,padding 0.200s ease,top 0.200s ease,left 0.200s ease,right 0.200s ease,bottom 0.200s ease,margin-right 0.200s ease,transform 0.200s ease,border 0.200s ease,width 0.200s ease'
           },
           overlay: {
-            display:'block',
-            zIndex: 1,
+            display: 'block',
+            zIndex: isOpen ? 1 : 0,
+            opacity: isOpen ? 1 : 0,
             backgroundColor: 'rgba(19, 27, 58, 0.6)',
-            backdropFilter: 'blur(250px)',
+            transition: 'opacity 0.200s ease, z-index 0.200s ease',
           }
         }}
       >
@@ -74,7 +76,8 @@ const RightSideMobile = () => {
           sx={{
             width: '100%',
             right: ['0', 'auto'],
-            height: ['100vh'], 
+            height: '100vh',
+
           }}
         >
           <Box
