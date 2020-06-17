@@ -20,7 +20,6 @@ places:
     descriptionP4: Unfortunately the castle is now closed until 2021 due to restoration work that is happening.
   - image: /river.png
     name: Lis River
-    year: 1135
     descriptionP1: The Lis river passes through Leiria and the mouth of the river is located in the Vieira beach, 30 minutes out from the city center.
     descriptionP2: The river side in Leiria has a lot of walking / jogging paths, which are simply beautiful. If you want to exercise a bit, feel free to use them.
     descriptionP3: On some occasions, when Leiria organizes festivals, the river is used for activities like paddle and kayaking.
