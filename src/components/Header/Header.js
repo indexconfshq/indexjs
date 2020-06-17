@@ -28,7 +28,7 @@ const Header = () => {
 
   const updateOnScroll = () => {
 
-    if (window.pageYOffset !== 0) {
+    if (window.pageYOffset >= 100) {
       if (!isMobile) {
         setShrinkHeader(true);
         console.log("SHOULD SHRINK TO TRUE", shrinkHeader);
@@ -113,7 +113,7 @@ const Header = () => {
                 </Box>
               </Box>
               <Box>
-                {isMobile ? <RightSideMobile /> : <RightSideDesktop shrinkHeader={shrinkHeader} isMobile={isMobile} />}
+                {isMobile ? <RightSideMobile isMobile={isMobile} /> : <RightSideDesktop shrinkHeader={shrinkHeader} isMobile={isMobile} />}
               </Box>
             </Box>
           </Container>

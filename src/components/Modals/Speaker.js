@@ -71,7 +71,7 @@ const reducer = (state, { type, payload }) => {
 const Speaker = ({ buttonText }) => {
 
   /* Modal */
-  const [isOpenSpeaker, setOpenedSpeaker] = useState(false);
+  const [isOpen, setOpenedSpeaker] = useState(false);
   
   const closeModalSpeaker = () => {
     setOpenedSpeaker(false);
@@ -114,7 +114,7 @@ const Speaker = ({ buttonText }) => {
         {buttonText}
       </Button>
       <Modal
-        isOpen={true}
+        isOpen={isOpen}
         onRequestClose={closeModalSpeaker}
         shouldCloseOnOverlayClick={true}
         shouldCloseOnEsc={true}
@@ -132,11 +132,11 @@ const Speaker = ({ buttonText }) => {
           },
           overlay: {
             display: 'block',
-            zIndex: isOpenSpeaker ? 1 : 0,
-            opacity: isOpenSpeaker ? 1 : 0,
+            zIndex: isOpen ? 1 : 0,
+            opacity: isOpen ? 1 : 0,
             backgroundColor: 'rgba(19, 27, 58, 0.6)',
-            transition: 'opacity 0.200s ease, z-index 0.200s ease, backdrop-filter 0.200s ease',
             backdropFilter: 'blur(20px)',
+            transition: 'opacity 0.200s ease, z-index 0.200s ease, backdrop-filter 0.200s ease',
           }
         }}
       >

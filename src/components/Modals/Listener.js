@@ -72,7 +72,7 @@ const reducer = (state, { type, payload }) => {
 const Listener = ({ buttonText = 'Enroll', insideModal = false }) => {
 
   /* Modal */
-  const [isOpenListener, setOpenedListener] = useState(false);
+  const [isOpen, setOpenedListener] = useState(false);
   
   const closeModalListener = () => {
     setOpenedListener(false);
@@ -121,7 +121,7 @@ const Listener = ({ buttonText = 'Enroll', insideModal = false }) => {
         </Button>
       </Box>
       <Modal
-        isOpen={true}
+        isOpen={isOpen}
         onRequestClose={closeModalListener}
         shouldCloseOnOverlayClick={true}
         shouldCloseOnEsc={true}
@@ -139,8 +139,8 @@ const Listener = ({ buttonText = 'Enroll', insideModal = false }) => {
           },
           overlay: {
             display: 'block',
-            zIndex: isOpenListener ? 1 : 0,
-            opacity: isOpenListener ? 1 : 0,
+            zIndex: isOpen ? 1 : 0,
+            opacity: isOpen ? 1 : 0,
             backgroundColor: 'rgba(19, 27, 58, 0.6)',
             backdropFilter: 'blur(20px)',
             transition: 'opacity 0.200s ease, z-index 0.200s ease, backdrop-filter 0.200s ease',
