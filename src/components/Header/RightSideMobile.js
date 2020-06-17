@@ -4,13 +4,13 @@ import Modal from 'react-modal';
 import HeaderLink from './HeaderLink';
 import Logo from '../../images/logo.svg'
 import closeSvg from '../../images/close.svg';
-import { Box, Image } from 'theme-ui';
+import { Box, Image, Button } from 'theme-ui';
 import { AnchorLink } from "gatsby-plugin-anchor-links";
 import { FaBars } from 'react-icons/fa';
 
 Modal.setAppElement('#___gatsby');
 
-const RightSideMobile = () => {
+const RightSideMobile = ({ isMobile = false }) => {
 
   const [isOpen, setOpened] = useState(false);
 
@@ -39,13 +39,13 @@ const RightSideMobile = () => {
           p: ['15px','15px','15px','25px'],
           backgroundColor: 'blue',
           borderRadius: '50%',
-          display: 'flex'
+          display: 'flex',
         }}
       >
         <FaBars />
       </Box>
       <Modal
-        isOpen={true}
+        isOpen={isMobile}
         onRequestClose={closeModal}
         shouldCloseOnOverlayClick={true}
         shouldCloseOnEsc={true}
@@ -82,22 +82,24 @@ const RightSideMobile = () => {
         >
           <Box
             sx={{
-              float: 'right',
-              cursor: 'pointer',
-              px: 30,
-              py: 80,
-            }} 
-            onMouseUp={() => {setOpened(false)}}
-          >
-            <img src={closeSvg} alt="X"/>
-          </Box>
-          <Box
-            sx={{
               px: 30,
               py: 80,
             }}
           >
-            <Box onClick={() => {setOpened(false)}} >
+            <Box
+              sx={{
+                float: 'right',
+                cursor: 'pointer',
+                outline: 'none',
+                '-webkit-tap-highlight-color': 'transparent',
+              }} 
+              onClick={() => {setOpened(false)}}
+            >
+              <Image src={closeSvg} alt="X"/>
+            </Box>
+            <Box 
+              onClick={() => {setOpened(false)}}
+            >
               <AnchorLink to="/#home">
                 <Image src={Logo} sx={{ width: '70px', height: '70px' }} />
               </AnchorLink>

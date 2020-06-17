@@ -31,7 +31,7 @@ const Places = ({ places, knowTheCity }) => {
         {knowTheCity}
       </Button>
       <Modal
-        isOpen={true}
+        isOpen={isOpen}
         onRequestClose={closeModal}
         shouldCloseOnOverlayClick={true}
         shouldCloseOnEsc={true}
