@@ -31,11 +31,9 @@ const Header = () => {
     if (window.pageYOffset >= 100) {
       if (!isMobile) {
         setShrinkHeader(true);
-        console.log("SHOULD SHRINK TO TRUE", shrinkHeader);
       }
     } else {
       setShrinkHeader(false);
-      console.log("SHOULD SHRINK TO FALSE", shrinkHeader);
     }
 
   };

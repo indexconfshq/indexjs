@@ -35,7 +35,7 @@ const BigDate = () => {
 
   const backgroundWithGradient = [
     data.bgimg.childImageSharp.fluid,
-    `linear-gradient(90deg, #131B3A 0%, rgba(196, 196, 196, 0) 100%)`,
+    `linear-gradient(90deg, rgba(19,27,58,1) 0%, rgba(0,0,0,0.55) 100%)`,
   ].reverse();
 
   return(
@@ -85,7 +85,8 @@ const BigDate = () => {
                 fontSize: ['29px','29px','29px',40], 
                 lineHeight: ['31px','31px','31px','42px'],
                 mt: [25, 25, 25, 20],
-                textAlign: ['center', 'center', 'center', 'left']
+                textAlign: ['center', 'center', 'center', 'left'],
+                textShadow: '0px 0px 20px #000',
               }}
             >
               <Text>

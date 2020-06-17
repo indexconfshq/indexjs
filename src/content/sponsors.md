@@ -5,7 +5,7 @@ subtitle: Special Thanks To Our Sponsors
 goldenSponsors:
   - name:   xgeeks
     link:   http://xgeeks.io
-    logo:   /xgeeks_logo_color.png
+    logo:   /xgeeks_logo_white.png
   - name:   Câmara Municipal de Leiria
     link:   https://www.cm-leiria.pt/
     logo:   /municipio_leiria.png
