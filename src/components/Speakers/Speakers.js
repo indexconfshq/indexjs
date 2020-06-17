@@ -13,6 +13,7 @@ const Speakers = () => {
       markdownRemark(frontmatter: { id: { eq: "speakers" } }) {
         frontmatter {
           title
+          announcingSoon
           alldays {
             day
             dayColor
@@ -58,7 +59,7 @@ const Speakers = () => {
             {index === 0 &&
               <Title title={data.title} paddingBottom='0px' textColor="yellow" />}
             <Box>
-              <Day day={eachDay} />
+              <Day day={eachDay} announcingSoon={data.announcingSoon} />
             </Box>
           </Container>
         </Box>

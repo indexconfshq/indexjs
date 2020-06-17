@@ -8,8 +8,8 @@ const Info = ({ person, insideModal }) => (
     sx={{
       color: 'blue',
       maxWidth: '500px',
-      mt: insideModal ? ['10px',0] : 0,
-      ml: insideModal ? [0,'10px'] : 0
+      mt: insideModal ? ['10px','10px','10px','10px',0] : 0,
+      ml: insideModal ? [0,0,10,0,0,'10px'] : 0
     }}
   >
     <Text
@@ -27,7 +27,7 @@ const Info = ({ person, insideModal }) => (
       sx={{
         fontFamily: 'text',
         fontSite: insideModal ? ['15px', '15px', '15px', 20] : 20,
-        lineHeight: insideModal ? ['21px', '21px', '21px', '26px'] : '26px',
+        lineHeight: insideModal ? ['21px', '21px', '21px', 'cardRole'] : 'cardRole',
       }}
     >
       {person.role}

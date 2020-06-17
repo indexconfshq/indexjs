@@ -26,7 +26,7 @@ const Footer = ({ person, presentationDay }) => (
           sx={{
             fontFamily: 'text',
             fontSize: '13px',
-            lineHeight: '26px',
+            lineHeight: 'body',
           }}
         >
           <PersonModal person={person} presentationDay={presentationDay} />

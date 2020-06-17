@@ -48,6 +48,7 @@ const BigDate = () => {
           backgroundSize: 'cover',
           backgroundRepeat: 'none',        
           width: '100%',
+          minHeight: '100vh'
         }}
       >
         <Container>
