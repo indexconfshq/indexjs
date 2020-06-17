@@ -7,6 +7,9 @@ module.exports = {
         url: 'https://indexjs.io', // No trailing slash allowed!
         image: '/logo.svg', // Path to your image you placed in the 'static' folder
         twitterUsername: '@twitter',
+        author: 'xgeeks',
+        locationCity: 'Leiria,',
+        locationCountry: 'Portugal'
     },
     plugins: [
         {
@@ -44,5 +47,52 @@ module.exports = {
         'gatsby-plugin-react-helmet',
         'gatsby-plugin-theme-ui',
         'gatsby-plugin-transition-link',
+        'gatsby-transformer-sharp',
+        'gatsby-plugin-sharp',
+        {
+          resolve: "gatsby-plugin-anchor-links",
+          options: {
+            offset: -100
+          }
+        },
+        {
+          resolve: 'gatsby-transformer-remark',
+          options: {
+            plugins: [
+              {
+                resolve: 'gatsby-remark-images',
+                options: {
+                  // It's important to specify the maxWidth (in pixels) of
+                  // the content container as this plugin uses this as the
+                  // base for generating different widths of each image.
+                  maxWidth: 1440,
+                },
+              },
+            ],
+          },
+        },
+        {
+          resolve: 'gatsby-source-filesystem',
+          options: {
+            name: 'images',
+            path: `${__dirname}/src/images`,
+          },
+        },
+        {
+          resolve: `gatsby-source-filesystem`,
+          options: {
+            name: `pages`,
+            path: `${__dirname}/src/content`,
+          },
+        },
+        {
+          resolve: 'gatsby-plugin-web-font-loader',
+          options: {
+            custom: {
+              families: ['chronicnormal', 'objectiveregular', 'objectivebold'],
+              urls: ['fonts.css']
+            }
+          }
+        },
     ],
 }

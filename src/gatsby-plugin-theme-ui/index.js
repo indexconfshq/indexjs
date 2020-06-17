@@ -1,25 +1,61 @@
 export default {
+    breakpoints: ['360px', '576px', '768px', '992px', '1200px', '1400px'],
     colors: {
         text: '#fff',
-        background: '#07102b',
-        primary: '#f8cd00',
+        background: '#ffffff',
+        backgroundSecondary: '#07102b',
+        primary: '#f8cd00', //yellow
         secondary: '#e91b58',
+        blue: '#131B3A',
+        pink: '#D23B68',
+        lightestGray: '#FAFAFA',
+        lightestGray2: '#F5F5F5',
+        paragraph: '#000'
     },
     buttons: {
         primary: {
-            color: 'text',
-            bg: 'transparent',
-            border: 'solid 2px #FFFFFF',
-            borderRadius: '24px',
-            fontSize: '1.3em',
-            cursor: 'pointer',
-
-            '&:hover': {
-                background:
-                    'linear-gradient(125deg, rgba(248,205,0,1) 0%, rgba(233,27,88,1) 100%)',
-                color: 'background',
-            },
+          height: '54px',
+          background: 'linear-gradient(30.03deg, #D23B68 18.45%, #F0D440 104.3%)',
+          borderRadius: '27px',
+          cursor: 'pointer',
         },
+        secondary: {
+          width: '197px',
+          height: '54px',
+          background: '#00B8CC',
+          borderRadius: '117px',
+          cursor: 'pointer',
+          '&:hover': {
+            background: '#008291',
+          },
+          transition: 'background 0.200s ease'
+        },
+        tertiary: {
+          width: '197px',
+          height: '54px',
+          background: '#D23B68',
+          borderRadius: '117px',
+          cursor: 'pointer',
+          color: 'white',
+          fontFamily: 'subHeading',
+          fontSize: 20, 
+          lineHeight: '21px',
+          '&:hover': {
+            background: '#a32e51',
+          },
+          transition: 'background 0.200s ease'
+        },
+        quaternary: {
+          fontFamily: 'text',
+          fontSize: '13px',
+          lineHeight: '26px',
+          letterSpacing: '0.05em',
+          color: 'rgba(19, 27, 58, 0.7)',
+          border: 0,
+          p: 0,
+          background: 0,
+          cursor: 'pointer',
+        }
     },
     links: {
         social: {
@@ -28,9 +64,9 @@ export default {
         },
     },
     fonts: {
-        body: 'system-ui, sans-serif',
-        heading: 'system-ui, sans-serif',
-        monospace: 'Menlo, monospace',
+        heading: "chronicnormal, sans-serif",
+        subHeading: "objectivebold, sans-serif",
+        text: "objectiveregular, sans-serif",
     },
     fontWeights: {
         body: 400,
@@ -40,6 +76,11 @@ export default {
     lineHeights: {
         body: 1.5,
         heading: 1.125,
+        bigDate: {
+          large: '157px',
+          medium: '121px',
+          small: '83px'
+        },
     },
-    fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 72],
+    fontSizes: [12, 14, 16, 20, 24, 30, 32, 40, 48, 64, 72, 100, 150, 230],
 }

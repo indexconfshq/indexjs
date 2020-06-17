@@ -1,28 +1,26 @@
 import React from 'react'
 import { Box, Flex } from 'theme-ui'
 
-import FormButton from './button'
+import FormButton from './FormButton' 
 
 const FormContainer = ({ children, handleSubmit }) => {
     return (
         <form onSubmit={handleSubmit}>
-            <Box
-                sx={{
-                    mt: '120px',
-                    p: [24, 36],
-                    bg: '#EFB300',
-                }}
-            >
+            <Box sx={{
+              fontFamily: 'subHeading',
+              fontSize: 22
+            }}>
                 {children}
             </Box>
             <Flex
                 sx={{
-                    justifyContent: 'flex-end',
-                    p: 40,
-                    fontFamily: 'system-ui',
+                    justifyContent: ['center' ,'flex-end'],
+                    px: 20,
+                    pt: 15,
+                    fontFamily: 'subHeading'
                 }}
             >
-                <FormButton {...{ text: 'send', type: 'submit' }} />
+                <FormButton {...{ text: 'Send Request', type: 'submit' }} />
             </Flex>
         </form>
     )

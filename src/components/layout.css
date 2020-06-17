@@ -75,6 +75,7 @@ pre {
 
 a {
     background-color: transparent;
+    text-decoration: none;
 }
 
 /**
@@ -350,3 +351,6 @@ template {
     display: none;
 }
 
+div {
+  -webkit-tap-highlight-color: transparent;
+}
