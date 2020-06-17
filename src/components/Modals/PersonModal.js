@@ -113,7 +113,7 @@ const PersonModal = ({ person, presentationDay }) => {
                   backgroundColor: 'lightestGray2',
                   fontFamily: 'text',
                   fontSize: '20px',
-                  lineHeight: '125%',
+                  lineHeight: 'body',
                   color: 'paragraph',
                   mt: 32,
                   p:'10px',

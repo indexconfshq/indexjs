@@ -46,13 +46,14 @@ module.exports = {
         },
         'gatsby-plugin-react-helmet',
         'gatsby-plugin-theme-ui',
+        'gatsby-plugin-styled-components',
         'gatsby-plugin-transition-link',
         'gatsby-transformer-sharp',
         'gatsby-plugin-sharp',
         {
           resolve: "gatsby-plugin-anchor-links",
           options: {
-            offset: -100
+            offset: -50
           }
         },
         {

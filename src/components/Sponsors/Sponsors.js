@@ -26,6 +26,7 @@ const Sponsors = () => {
 							}
             }
           }
+          showOtherSponsors
           otherSponsors {
             name
             link
@@ -58,7 +59,9 @@ const Sponsors = () => {
         <Subtitle subtitle={data.subtitle} paddingBottom='75px' />
 
         <SponsorSection sectionTitle="GOLDEN" sponsorSection={data.goldenSponsors} />
-        <SponsorSection sectionTitle="OTHER" sponsorSection={data.otherSponsors} hasMargin={true} />
+        {data.showOtherSponsors &&
+          <SponsorSection sectionTitle="OTHER" sponsorSection={data.otherSponsors} hasMargin={true} />
+        }
         
       </Container>
     </Box>

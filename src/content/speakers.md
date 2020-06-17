@@ -1,6 +1,7 @@
 ---
 id: speakers
 title: SPEAKERS
+announcingSoon: true
 alldays:
   - day: 16
     dayColor: blue

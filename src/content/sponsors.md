@@ -6,25 +6,11 @@ goldenSponsors:
   - name:   xgeeks
     link:   http://xgeeks.io
     logo:   /xgeeks_logo.png
-  - name:   xgeeks
-    link:   http://xgeeks.io
-    logo:   /xgeeks_logo.png
-  - name:   xgeeks
-    link:   http://xgeeks.io
-    logo:   /xgeeks_logo.png
-  - name:   xgeeks
-    link:   http://xgeeks.io
-    logo:   /xgeeks_logo.png
-  - name:   xgeeks
-    link:   http://xgeeks.io
-    logo:   /xgeeks_logo.png
-  - name:   xgeeks
-    link:   http://xgeeks.io
-    logo:   /xgeeks_logo.png
+  - name:   Câmara Municipal de Leiria
+    link:   https://www.cm-leiria.pt/
+    logo:   /municipio_leiria.png
+showOtherSponsors: false
 otherSponsors:
-  - name:   xgeeks
-    link:   http://xgeeks.io
-    logo:   /xgeeks_logo.png
   - name:   xgeeks
     link:   http://xgeeks.io
     logo:   /xgeeks_logo.png

@@ -5,6 +5,9 @@ import get from 'lodash/get';
 import Container from './Container';
 import Title from './Title';
 import PersonCard from './PersonCard/PersonCard';
+import ReactMarkdown from 'react-markdown';
+import MarkdownRenderer from './MarkdownRenderer';
+
 
 const KnowUs = () => {
   
@@ -27,20 +30,23 @@ const KnowUs = () => {
             github
             twitter
           }
-          text
         }
+				internal {
+					content
+				}
       }
     }
   `);
 
   const data = get(queryResults, 'markdownRemark.frontmatter');
+  const text = get(queryResults, 'markdownRemark.internal.content');
   
   return (
     <Box 
       id="know-us"
       sx={{
         backgroundColor: 'lightestGray', 
-        mb: 92
+        pb: 92
       }}
     >
       <Container>
@@ -55,12 +61,15 @@ const KnowUs = () => {
             sx={{
               fontFamily: 'text',
               fontSize: '20px',
-              lineHeight: '25px',
+              lineHeight: 'body',
               textAlign: 'center',
               color: 'paragraph'
             }}
           >
-            {data.text}
+          <ReactMarkdown
+            source={text}
+            renderers={MarkdownRenderer}
+          />
           </Text>
         </Box>
       </Container>
