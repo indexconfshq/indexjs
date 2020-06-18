@@ -6,7 +6,7 @@ alldays:
   - day: 16
     dayColor: blue
     dayTitleColor: yellow
-    ltr: false #this not only makes the gradient inverted, but also the alignment in desktop
+    ltr: false 
     persons:
       - photo: /david-alecrim.png
         name: David Alecrim

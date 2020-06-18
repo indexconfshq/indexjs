@@ -22,7 +22,7 @@ persons:
     name: Luís Soares
     role: Head of Engineering @xgeeks
     github: https://github.com/xsoares
-    #twitter: https://twitter.com/david_alecrim 
+    twitter: https://twitter.com/Luis_soares1
 ---
 
 indexjs is a community driven conference in the Leiria area.
