@@ -7,7 +7,6 @@ import Container from './Container';
 import Speaker from './Modals/Speaker';
 import Listener from './Modals/Listener';
 
-
 const BigDate = () => {
 
   const queryResults = useStaticQuery(graphql`

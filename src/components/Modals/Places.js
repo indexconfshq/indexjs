@@ -4,8 +4,6 @@ import Modal from 'react-modal';
 import closeSvg from '../../images/close.svg';
 import Img from 'gatsby-image';
 
-
-
 Modal.setAppElement('#___gatsby');
 
 const Places = ({ places, knowTheCity }) => {
@@ -65,7 +63,7 @@ const Places = ({ places, knowTheCity }) => {
             height: '100%',
             overflowY: 'scroll',
             overflowX: 'hidden',
-            background: '#f8cd00', 
+            backgroundColor: 'primary', 
             mx:'auto',
             py:[15, 15, 15, 40]
           }}

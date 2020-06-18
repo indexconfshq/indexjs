@@ -5,7 +5,6 @@ import { graphql, useStaticQuery } from 'gatsby';
 import get from 'lodash/get';
 import logo from '../images/logo.svg'
 
-
 const Footer = () => {
 
   const queryResults = useStaticQuery(graphql`

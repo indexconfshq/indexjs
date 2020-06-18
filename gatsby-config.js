@@ -86,14 +86,14 @@ module.exports = {
             path: `${__dirname}/src/content`,
           },
         },
-        {
-          resolve: 'gatsby-plugin-web-font-loader',
-          options: {
-            custom: {
-              families: ['chronicnormal', 'objectiveregular', 'objectivebold'],
-              urls: ['fonts.css']
-            }
-          }
-        },
+        // {
+        //   resolve: 'gatsby-plugin-web-font-loader',
+        //   options: {
+        //     custom: {
+        //       families: ['chronicnormal', 'objectiveregular', 'objectivebold'],
+        //       urls: ['fonts.css']
+        //     }
+        //   }
+        // },
     ],
 }

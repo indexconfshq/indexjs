@@ -1,6 +1,7 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import { useStaticQuery, graphql } from 'gatsby'
+import Fontscss from '../../static/fonts.css'
 
 const SEO = ({ title, description, image }) => {
     const { site } = useStaticQuery(

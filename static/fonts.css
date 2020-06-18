@@ -4,6 +4,7 @@
        url('./fonts/chronic-normal-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: 'objectiveregular';
@@ -11,6 +12,7 @@
        url('./fonts/objective-regular-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 
 }
 @font-face {
@@ -19,4 +21,5 @@
        url('./fonts/objective-bold-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
