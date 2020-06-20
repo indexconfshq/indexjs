@@ -78,7 +78,7 @@ export default {
     },
     lineHeights: {
         body: '30px',
-        cardRole: '22px',
+        cardRole: '23px',
         heading: 1.125,
         bigDate: {
           large: '157px',

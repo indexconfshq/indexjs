@@ -9,7 +9,7 @@ const Info = ({ person, insideModal }) => (
       color: 'blue',
       maxWidth: '500px',
       mt: insideModal ? ['10px','10px','10px','10px',0] : 0,
-      ml: insideModal ? [0,0,10,0,0,'10px'] : 0
+      ml: insideModal ? [0,0,10,10,10,10] : 0,
     }}
   >
     <Text
@@ -17,17 +17,29 @@ const Info = ({ person, insideModal }) => (
         fontFamily: 'subHeading',
         fontSize: insideModal ? ['25px', '25px', '25px', 30] : 30,
         lineHeight: insideModal ? ['26px', '26px', '26px', '31px'] : '31px',
-        mb: insideModal ? 10 : 17
+        mb: insideModal ? 10 : 17,
+        maxWidth: !insideModal && '225px',
+        maxHeight: !insideModal && '31px',
+        textOverflow: !insideModal && 'ellipsis',
+        overflow: !insideModal && 'hidden',
+        whiteSpace: !insideModal && 'nowrap',
       }}
+      title={person.name}
     >
       {person.name}
     </Text>
-
     <Text
       sx={{
+        position: 'relative',
+        maxHeight: insideModal ? ['50px','75px','75px','100px'] : '100px',
+        height: 'auto',
+        overflowY: insideModal ? 'auto' : 'auto',
+        backgroundColor: 'lightestGray',
+        p: '4px',
+        hyphens: 'auto',
         fontFamily: 'text',
-        fontSite: insideModal ? ['15px', '15px', '15px', 20] : 20,
-        lineHeight: insideModal ? ['21px', '21px', '21px', 'cardRole'] : 'cardRole',
+        fontSize: insideModal ? ['15px', '15px', '15px', 20] : 18,
+        lineHeight: insideModal ? ['20px', '20px', '20px', 'cardRole'] : 'cardRole',
       }}
     >
       {person.role}

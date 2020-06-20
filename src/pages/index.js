@@ -1,3 +1,5 @@
+import { graphql, useStaticQuery } from 'gatsby';
+import get from 'lodash/get';
 import React from 'react'
 import Layout from '../components/layout'
 import SEO from '../components/SEO'
@@ -8,9 +10,33 @@ import Location from '../components/Location';
 import Sponsors from '../components/Sponsors/Sponsors';
 
 const Index = () => {
+
+  const queryResults = useStaticQuery(graphql`
+    query IndexSeo {
+      markdownRemark(frontmatter: { id: { eq: "seo-md" } }) {
+        frontmatter {
+          featured {
+            childImageSharp {
+              resize(width: 200) {
+                src
+                height
+                width
+              }
+            }
+          }
+        }
+      }
+    }`,
+  );
+
+  const metaimage = get(queryResults, 'markdownRemark.frontmatter') ;
+  const image = metaimage.featured
+    ? metaimage.featured.childImageSharp.resize
+    : null
+
   return (
     <Layout>
-      <SEO />
+      <SEO image={image} />
       <BigDate />
       <KnowUs />
       <Speakers />
@@ -20,4 +46,4 @@ const Index = () => {
   )
 }
 
-export default Index
+export default Index;
