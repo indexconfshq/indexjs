@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { Box, Button, Text } from 'theme-ui'
+import { Box, Button } from 'theme-ui'
 import closeSvg from '../../images/close.svg';
 import Modal from 'react-modal';
 import Info from '../PersonCard/Info';
-import Listener from './Listener';
 import Photo from '../PersonCard/Photo';
+import SpeakerInfo from '../PersonCard/SpeakerInfo';
 
 Modal.setAppElement('#___gatsby');
 
@@ -54,9 +54,9 @@ const PersonModal = ({ person, presentationDay }) => {
         <Box 
           sx={{ 
             width: ['100%','100%','100%', '550px', '550px', '846px'], 
-            maxHeight: ['86vh','86vh','86vh','86vh','100%'], 
+            maxHeight: ['86vh','86vh','86vh','86vh','98vh'], 
             height: '100%',
-            overflowY: ['scroll','scroll','auto','auto','hidden'],
+            overflowY: ['scroll','scroll','auto'],
             background: 'white', 
             px:[15, 15, 15, 30],
             py:[15, 15, 15, 40]
@@ -86,46 +86,7 @@ const PersonModal = ({ person, presentationDay }) => {
                 mt: [15, 15, 15, 15, 60]
               }}
             >
-              <Text
-                sx={{
-                  fontFamily: 'subHeading',
-                  color: 'pink',
-                  fontSize: ['24px','24px','40px','40px'],
-                  lineHeight: ['28px','28px','40px','41px'],
-                  textTransform: 'uppercase'
-                }}
-              >
-                {person.topic}
-              </Text>
-              <Text
-                sx={{
-                  fontFamily: 'subHeading',
-                  fontSize: ['20px','20px','20px', '20px','30px'],
-                  lineHeight: ['21px','21px','21px', '21px', '31px'],
-                  color: 'blue',
-                  mt: ['7px','7px','7px', '7px', 15]
-                }}
-              >
-                Day {presentationDay} - {person.hour}
-              </Text>
-              <Text
-                sx={{
-                  backgroundColor: 'lightestGray2',
-                  fontFamily: 'text',
-                  fontSize: '20px',
-                  lineHeight: '125%',
-                  color: 'paragraph',
-                  mt: 32,
-                  p:'10px',
-                  height: [130, 130, 250, 130, 148],
-                  overflowY: ['scroll','scroll','auto'],
-                }}
-              >
-                &emsp;{person.presentationDescription}
-              </Text>
-              <Box>
-                <Listener insideModal={true} />
-              </Box>
+              <SpeakerInfo person={person} presentationDay={presentationDay} />
             </Box>
           </Box>
         </Box>

@@ -4,7 +4,7 @@ import Modal from 'react-modal';
 import HeaderLink from './HeaderLink';
 import Logo from '../../images/logo.svg'
 import closeSvg from '../../images/close.svg';
-import { Box, Image, Button } from 'theme-ui';
+import { Box, Image } from 'theme-ui';
 import { AnchorLink } from "gatsby-plugin-anchor-links";
 import { FaBars } from 'react-icons/fa';
 

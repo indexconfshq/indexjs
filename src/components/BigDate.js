@@ -7,7 +7,6 @@ import Container from './Container';
 import Speaker from './Modals/Speaker';
 import Listener from './Modals/Listener';
 
-
 const BigDate = () => {
 
   const queryResults = useStaticQuery(graphql`
@@ -35,7 +34,7 @@ const BigDate = () => {
 
   const backgroundWithGradient = [
     data.bgimg.childImageSharp.fluid,
-    `linear-gradient(90deg, #131B3A 0%, rgba(196, 196, 196, 0) 100%)`,
+    `linear-gradient(90deg, rgba(19,27,58,1) 0%, rgba(0,0,0,0.55) 100%)`,
   ].reverse();
 
   return(
@@ -46,14 +45,18 @@ const BigDate = () => {
         fluid={backgroundWithGradient}
         style={{
           backgroundSize: 'cover',
-          backgroundRepeat: 'none',        
+          backgroundRepeat: 'none',
           width: '100%',
+          height: '100vh',
+          display: 'flex',
+          alignItems: 'center'
         }}
       >
         <Container>
           <Flex
             sx={{
-              py: [90, 90, 90, 150],
+              pt: [0, 0, 0, 150],
+              pb: [0,0,0,25],
               alignItems: 'center',
               justifyContent: ['center','center','center','flex-start'],
               backgroundRepeat: 'no-repeat',
@@ -84,7 +87,8 @@ const BigDate = () => {
                 fontSize: ['29px','29px','29px',40], 
                 lineHeight: ['31px','31px','31px','42px'],
                 mt: [25, 25, 25, 20],
-                textAlign: ['center', 'center', 'center', 'left']
+                textAlign: ['center', 'center', 'center', 'left'],
+                textShadow: '0px 0px 20px #000',
               }}
             >
               <Text>

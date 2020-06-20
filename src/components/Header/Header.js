@@ -31,11 +31,9 @@ const Header = () => {
     if (window.pageYOffset >= 100) {
       if (!isMobile) {
         setShrinkHeader(true);
-        console.log("SHOULD SHRINK TO TRUE", shrinkHeader);
       }
     } else {
       setShrinkHeader(false);
-      console.log("SHOULD SHRINK TO FALSE", shrinkHeader);
     }
 
   };
@@ -67,7 +65,8 @@ const Header = () => {
         > 
           <Container
             sx={{
-              px: [0, 0, 0]
+              px: [0, 0, 0],
+              width: ['100%', '100%', '100%', '100%', 1000, 1337],
             }}
           >
             <Box

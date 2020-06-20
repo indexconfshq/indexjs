@@ -55,6 +55,9 @@ export default {
           p: 0,
           background: 0,
           cursor: 'pointer',
+          '&:hover': {
+            color: '#D23B68'
+          }
         }
     },
     links: {
@@ -74,7 +77,8 @@ export default {
         bold: 700,
     },
     lineHeights: {
-        body: 1.5,
+        body: '30px',
+        cardRole: '23px',
         heading: 1.125,
         bigDate: {
           large: '157px',

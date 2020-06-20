@@ -38,6 +38,13 @@ const Form = ({ state, handleSubmit, onFieldChange }) => (
         value={state.email}
         onChange={onFieldChange('email')}
       />
+      <FormField
+          required
+          label="* What's your talk subject"
+          placeholder="ex: css in JS the future"
+          value={state.subject}
+          onChange={onFieldChange('subject')}
+      />
       <Box>
         <FormFieldLabel {...{ label: 'Anything else?' }} />
         <Textarea

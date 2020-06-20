@@ -4,7 +4,6 @@ import Modal from 'react-modal';
 import closeSvg from '../../images/close.svg';
 import Img from 'gatsby-image';
 
-
 Modal.setAppElement('#___gatsby');
 
 const Places = ({ places, knowTheCity }) => {
@@ -64,7 +63,7 @@ const Places = ({ places, knowTheCity }) => {
             height: '100%',
             overflowY: 'scroll',
             overflowX: 'hidden',
-            background: '#f8cd00', 
+            backgroundColor: 'primary', 
             mx:'auto',
             py:[15, 15, 15, 40]
           }}
@@ -134,7 +133,7 @@ const Places = ({ places, knowTheCity }) => {
                         pr: 20,
                         mt: [20, 20, 20, 0],
                         hyphens: 'auto',
-                        width: ['100%','100%','100%','60%','70%','70%'],
+                        width: ['100%','100%','100%','60%','70%','76%'],
                         mx:['auto','auto','auto',0], 
                         textAlign: ['center','center','center','left'],
                       }}
@@ -166,13 +165,16 @@ const Places = ({ places, knowTheCity }) => {
                           maxWidth: '777px',
                           fontFamily: 'text',
                           fontSize: '20px',
-                          lineHeight: '25px',
+                          lineHeight: 'body',
                           color: 'paragraph',
                           mt: '32px',
                           textAlign: ['justify','justify','justify','left']
                         }}
                       >
-                        &emsp;{place.description}
+                        <PlaceDescriptionPart part={place.descriptionP1} />
+                        <PlaceDescriptionPart part={place.descriptionP2} />
+                        <PlaceDescriptionPart part={place.descriptionP3} />
+                        <PlaceDescriptionPart part={place.descriptionP4} />
                       </Text>
                     </Box>
                   </Box>
@@ -186,5 +188,17 @@ const Places = ({ places, knowTheCity }) => {
     </Box>
   )
 }
+
+const PlaceDescriptionPart = ({ part = null }) => (
+  <Box>
+    {part && 
+      <Text sx={{
+        my: '7px'
+      }}>
+        &emsp;{part}
+      </Text>
+    }
+  </Box>
+);
 
 export default Places;

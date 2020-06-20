@@ -11,7 +11,7 @@ const Photo = ({ photo, name, insideModal }) => (
     }}
   >
     <Box sx={{
-      border: insideModal ? 0 : '10px solid #FFFFFF',
+      border: '10px solid #FFFFFF',
       borderRadius: insideModal ? 0 : '10px 0px 10px 92px',
       background: 'white',
       width: insideModal ? '125px' : '154px',
@@ -21,7 +21,7 @@ const Photo = ({ photo, name, insideModal }) => (
       zIndex: 1,
       right: insideModal ? 0 : 25,
       overflow: 'hidden',
-      boxShadow: insideModal ? 0 : '0px -16px 43px -16px rgba(0,0,0,0.75)'
+      boxShadow: '0px 0px 10px 0px rgba(0,0,0,0.75)'
     }}>
       <Img 
         fixed={photo.childImageSharp.fixed} 

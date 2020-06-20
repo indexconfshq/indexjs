@@ -3,8 +3,7 @@ import { Box, Text, Image } from 'theme-ui';
 import Container from './Container';
 import { graphql, useStaticQuery } from 'gatsby';
 import get from 'lodash/get';
-import xgeeksLogo from '../images/xgeeks-logo.svg'
-
+import logo from '../images/logo.svg'
 
 const Footer = () => {
 
@@ -12,7 +11,7 @@ const Footer = () => {
     query SiteConfigFooter {
       site {
         siteMetadata {
-          author
+          title
           locationCity
           locationCountry
         }
@@ -52,20 +51,14 @@ const Footer = () => {
           >
             <Box
               sx={{
+                maxWidth: '100px',
                 width: '100%',
                 pb: '15px',
                 mb: '-1px'
               }}
             >
-              <Image src={xgeeksLogo} />
+              <Image src={logo} />
             </Box>
-            {/* <Box sx={{
-              height: '1px',
-              width: '100%',
-              pb: '15px',
-              borderTop: '1px solid white',
-              mx: 'auto'
-            }} /> */}
             <Box
               sx={{
                 width: '60vw',
@@ -75,12 +68,12 @@ const Footer = () => {
                 sx={{
                   fontFamily: 'text',
                   fontSize: '12px',
-                  lineHeight: '13px',
+                  lineHeight: 'body',
                   textAlign: 'center',
                   color: 'white'
                 }}
               >
-                &copy; {siteMetadata.author}, {siteMetadata.locationCity} {siteMetadata.locationCountry} {new Date().getFullYear()}
+                &copy; {siteMetadata.title}, {siteMetadata.locationCity} {siteMetadata.locationCountry} {new Date().getFullYear()}
               </Text>
             </Box>
           </Box>

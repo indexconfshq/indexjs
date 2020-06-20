@@ -3,9 +3,9 @@ require('dotenv').config()
 module.exports = {
     siteMetadata: {
         title: 'indexJS',
-        description: 'The first JS dedicated conference in Portugal',
+        description: 'The JS dedicated conference in Portugal',
         url: 'https://indexjs.io', // No trailing slash allowed!
-        image: '/logo.svg', // Path to your image you placed in the 'static' folder
+        image: '/logo.png', // Path to your image you placed in the 'static' folder
         twitterUsername: '@twitter',
         author: 'xgeeks',
         locationCity: 'Leiria,',
@@ -21,7 +21,7 @@ module.exports = {
                 background_color: `#07102b`,
                 theme_color: `#f8cd00`,
                 display: `standalone`,
-                icon: `src/images/logo.svg`,
+                icon: `src/images/logo.png`,
             },
         },
         {
@@ -46,13 +46,14 @@ module.exports = {
         },
         'gatsby-plugin-react-helmet',
         'gatsby-plugin-theme-ui',
+        'gatsby-plugin-styled-components',
         'gatsby-plugin-transition-link',
         'gatsby-transformer-sharp',
         'gatsby-plugin-sharp',
         {
           resolve: "gatsby-plugin-anchor-links",
           options: {
-            offset: -100
+            offset: -50
           }
         },
         {
@@ -85,14 +86,14 @@ module.exports = {
             path: `${__dirname}/src/content`,
           },
         },
-        {
-          resolve: 'gatsby-plugin-web-font-loader',
-          options: {
-            custom: {
-              families: ['chronicnormal', 'objectiveregular', 'objectivebold'],
-              urls: ['fonts.css']
-            }
-          }
-        },
+        // {
+        //   resolve: 'gatsby-plugin-web-font-loader',
+        //   options: {
+        //     custom: {
+        //       families: ['chronicnormal', 'objectiveregular', 'objectivebold'],
+        //       urls: ['fonts.css']
+        //     }
+        //   }
+        // },
     ],
 }

@@ -7,6 +7,8 @@ import BackgroundImage from 'gatsby-background-image'
 import Title from './Title';
 import Subtitle from './Subtitle';
 import Places from './Modals/Places';
+import ReactMarkdown from 'react-markdown';
+import MarkdownRenderer from './MarkdownRenderer';
 
 const Location = () => {
 
@@ -30,7 +32,6 @@ const Location = () => {
         frontmatter {
           title
           subtitle
-          text
           knowTheCity
           bgimg {
             childImageSharp {
@@ -49,14 +50,21 @@ const Location = () => {
             }
             name
             year
-            description
+            descriptionP1
+            descriptionP2
+            descriptionP3
+            descriptionP4
           }
         }
+				internal {
+					content
+				}
       }
     }
   `);
 
   const data = get(queryResults, 'markdownRemark.frontmatter');
+  const text = get(queryResults, 'markdownRemark.internal.content');
   
   return (
     <Box
@@ -83,7 +91,7 @@ const Location = () => {
             ml: 'auto',
             position: 'relative',
             width: ['100%','100%','100%','715px','835px'],
-            height: ['auto','auto','auto','565px'],
+            height: 'auto'
           }}
         >
             <Box
@@ -115,11 +123,14 @@ const Location = () => {
                     sx={{
                       fontFamily: 'text',
                       fontSize: '20px',
-                      lineHeight: '25px',
+                      lineHeight: 'body',
                       color: 'paragraph'
                     }}
                   >
-                    {data.text}
+                    <ReactMarkdown
+                      source={text}
+                      renderers={MarkdownRenderer}
+                    />
                   </Text>
                 </Box>
               </Box>

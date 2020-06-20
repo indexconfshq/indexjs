@@ -1,10 +1,13 @@
 import React from 'react';
-import { Box, Text } from 'theme-ui'
+import { Box, Text, Grid } from 'theme-ui'
 import { graphql, useStaticQuery } from 'gatsby';
 import get from 'lodash/get';
 import Container from './Container';
 import Title from './Title';
 import PersonCard from './PersonCard/PersonCard';
+import ReactMarkdown from 'react-markdown';
+import MarkdownRenderer from './MarkdownRenderer';
+
 
 const KnowUs = () => {
   
@@ -27,40 +30,48 @@ const KnowUs = () => {
             github
             twitter
           }
-          text
         }
+				internal {
+					content
+				}
       }
     }
   `);
 
   const data = get(queryResults, 'markdownRemark.frontmatter');
+  const text = get(queryResults, 'markdownRemark.internal.content');
   
   return (
     <Box 
       id="know-us"
       sx={{
         backgroundColor: 'lightestGray', 
-        mb: 92
+        pb: 92
       }}
     >
       <Container>
         <Title title={data.title} paddingBottom='95px' />
-        <Box sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-evenly', alignItems: 'center' }}>
-          {data.persons.map( (person, index) => (
-            <PersonCard key={person.name + index} person={person} gradientLTR={data.ltr} index={index} />
-          ))}
-        </Box>
+        <Grid columns={[1, 1, 1, 2, 2, 4]}>
+            {data.persons.map( (person, index) => (
+              <Box sx={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'center' }}>
+                <PersonCard key={person.name + index} person={person} gradientLTR={data.ltr} index={index} />
+              </Box>
+            ))}
+        </Grid>
         <Box sx={{ mt: 66, maxWidth: 846, mx: 'auto' }}>
           <Text 
             sx={{
               fontFamily: 'text',
               fontSize: '20px',
-              lineHeight: '25px',
+              lineHeight: 'body',
               textAlign: 'center',
               color: 'paragraph'
             }}
           >
-            {data.text}
+          <ReactMarkdown
+            source={text}
+            renderers={MarkdownRenderer}
+          />
           </Text>
         </Box>
       </Container>

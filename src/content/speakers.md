@@ -1,11 +1,12 @@
 ---
 id: speakers
 title: SPEAKERS
+announcingSoon: false
 alldays:
   - day: 16
     dayColor: blue
     dayTitleColor: yellow
-    ltr: false #this not only makes the gradient inverted, but also the alignment in desktop
+    ltr: false 
     persons:
       - photo: /david-alecrim.png
         name: David Alecrim
@@ -57,7 +58,7 @@ alldays:
         presentationDescription: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
       - photo: /wilson-rodrigues.png
         name: Wilson Rodrigues
-        role: Software Engineer
+        role: Software Engineer, Try&Catch meetup organizer, open-source / linux enthusiastSoftware Engineer, Try&Catch meetup organizer, open-source / linux enthusiastSoftware Engineer, Try&Catch meetup organizer, open-source / linux enthusiastSoftware Engineer, Try&Catch meetup organizer, open-source / linux enthusiastSoftware Engineer, Try&Catch meetup organizer, open-source / linux enthusiastSoftware Engineer, Try&Catch meetup organizer, open-source / linux enthusiastSoftware Engineer, Try&Catch meetup organizer, open-source / linux enthusiastSoftware Engineer, Try&Catch meetup organizer, open-source / linux enthusiastSoftware Engineer, Try&Catch meetup organizer, open-source / linux enthusiastSoftware Engineer, Try&Catch meetup organizer, open-source / linux enthusiastSoftware Engineer, Try&Catch meetup organizer, open-source / linux enthusiastSoftware Engineer, Try&Catch meetup organizer, open-source / linux enthusiastSoftware Engineer, Try&Catch meetup organizer, open-source / linux enthusiastSoftware Engineer, Try&Catch meetup organizer, open-source / linux enthusiastSoftware Engineer, Try&Catch meetup organizer, open-source / linux enthusiastSoftware Engineer, Try&Catch meetup organizer, open-source / linux enthusiastSoftware Engineer, Try&Catch meetup organizer, open-source / linux enthusiastSoftware Engineer, Try&Catch meetup organizer, open-source / linux enthusiastSoftware Engineer, Try&Catch meetup organizer, open-source / linux enthusiastSoftware Engineer, Try&Catch meetup organizer, open-source / linux enthusiastSoftware Engineer, Try&Catch meetup organizer, open-source / linux enthusiastSoftware Engineer, Try&Catch meetup organizer, open-source / linux enthusiastSoftware Engineer, Try&Catch meetup organizer, open-source / linux enthusiastSoftware Engineer, Try&Catch meetup organizer, open-source / linux enthusiastSoftware Engineer, Try&Catch meetup organizer, open-source / linux enthusiastSoftware Engineer, Try&Catch meetup organizer, open-source / linux enthusiast
         github: https://github.com/wr46
         twitter: https://twitter.com/wr46
         topic: You Don't Know JS
