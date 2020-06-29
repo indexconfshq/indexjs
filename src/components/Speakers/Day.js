@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box } from 'theme-ui';
+import { Box, Grid } from 'theme-ui';
 import Subtitle from '../Subtitle';
 import PersonCard from '../PersonCard/PersonCard';
 import AnnouncingSoon from './AnnouncingSoon';
@@ -18,19 +18,13 @@ const Day = ({ day, announcingSoon = false }) => (
       ? 
         <AnnouncingSoon dayColor={day.dayColor} textColor={day.dayTitleColor} />
       :
-      <Box 
-        sx={{ 
-          display: 'flex', 
-          flexWrap: 'wrap', 
-          justifyContent: 'space-evenly', 
-          alignItems: 'center', 
-          flexDirection: 'row',
-        }}
-      >
+      <Grid columns={[1, 1, 1, 2, 2, 4]}>
         {day.persons.map( (person, index) => (
-          <PersonCard key={person.name + index} person={person} gradientLTR={day.ltr} index={index} presentationDay={day.day} />
+          <Box sx={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'center' }} >
+            <PersonCard key={person.name + index} person={person} gradientLTR={day.ltr} index={index} presentationDay={day.day} />
+          </Box>
         ))}
-      </Box>
+      </Grid>
     }
     
   </Box>

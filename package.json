@@ -46,6 +46,7 @@
     "gsap": "^3.2.6",
     "intersection-observer": "^0.10.0",
     "prettier": "^2.0.2",
+    "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-helmet": "^5.2.1",

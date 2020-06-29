@@ -5,7 +5,7 @@ import twitterLogo from '../../images/twitter.svg';
 
 const Socials = ({ github = null, twitter = null }) => (
 
-  <Box mt="18px">
+  <Box mt="7px">
     {github &&
       <Link href={github} target="_blank" rel="noreferrer noopener">
         <Image src={githubLogo} />

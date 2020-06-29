@@ -5,7 +5,7 @@ module.exports = {
         title: 'indexJS',
         description: 'The JS dedicated conference in Portugal',
         url: 'https://indexjs.io', // No trailing slash allowed!
-        image: '/logo.svg', // Path to your image you placed in the 'static' folder
+        image: '/logo.png', // Path to your image you placed in the 'static' folder
         twitterUsername: '@twitter',
         author: 'xgeeks',
         locationCity: 'Leiria,',
@@ -21,7 +21,7 @@ module.exports = {
                 background_color: `#07102b`,
                 theme_color: `#f8cd00`,
                 display: `standalone`,
-                icon: `src/images/logo.svg`,
+                icon: `src/images/logo.png`,
             },
         },
         {

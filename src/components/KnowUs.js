@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Text } from 'theme-ui'
+import { Box, Text, Grid } from 'theme-ui'
 import { graphql, useStaticQuery } from 'gatsby';
 import get from 'lodash/get';
 import Container from './Container';
@@ -51,11 +51,13 @@ const KnowUs = () => {
     >
       <Container>
         <Title title={data.title} paddingBottom='95px' />
-        <Box sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-evenly', alignItems: 'center' }}>
-          {data.persons.map( (person, index) => (
-            <PersonCard key={person.name + index} person={person} gradientLTR={data.ltr} index={index} />
-          ))}
-        </Box>
+        <Grid columns={[1, 1, 1, 2, 2, 4]}>
+            {data.persons.map( (person, index) => (
+              <Box sx={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'center' }}>
+                <PersonCard key={person.name + index} person={person} gradientLTR={data.ltr} index={index} />
+              </Box>
+            ))}
+        </Grid>
         <Box sx={{ mt: 66, maxWidth: 846, mx: 'auto' }}>
           <Text 
             sx={{

@@ -9,7 +9,7 @@ const Body = ({ gradientLTR, person, presentationDay }) => (
       position: 'relative',
       background: gradientLTR ? 'linear-gradient(77.25deg, #D23B68 18.45%, #F0D440 104.3%)' : 'linear-gradient(-77.25deg, #D23B68 18.45%, #F0D440 104.3%)',
       height: 387,
-      width: ['100%',305,305,305],
+      width: ['100%',275,275,275],
       p: '10px',
       borderRadius: '4px',
       clipPath: 'polygon(100% 0%, 100% 78%, 81% 100%, 0 100%, 0 0)',

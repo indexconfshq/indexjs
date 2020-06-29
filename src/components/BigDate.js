@@ -45,15 +45,18 @@ const BigDate = () => {
         fluid={backgroundWithGradient}
         style={{
           backgroundSize: 'cover',
-          backgroundRepeat: 'none',        
+          backgroundRepeat: 'none',
           width: '100%',
-          minHeight: '100vh'
+          height: '100vh',
+          display: 'flex',
+          alignItems: 'center'
         }}
       >
         <Container>
           <Flex
             sx={{
-              py: [90, 90, 90, 150],
+              pt: [0, 0, 0, 150],
+              pb: [0,0,0,25],
               alignItems: 'center',
               justifyContent: ['center','center','center','flex-start'],
               backgroundRepeat: 'no-repeat',
