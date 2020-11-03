@@ -38,8 +38,9 @@ const Index = () => {
     <Layout>
       <SEO image={image} />
       <BigDate />
-      <KnowUs />
       <Speakers />
+      <KnowUs />
+      {/* <Speakers />*/}
       <Location />
       <Sponsors />
     </Layout>
