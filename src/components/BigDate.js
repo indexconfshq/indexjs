@@ -38,7 +38,7 @@ const BigDate = () => {
   ].reverse();
 
   return(
-    
+
     <Box id="home">
       <BackgroundImage
         Tag="section"
@@ -68,23 +68,24 @@ const BigDate = () => {
               sx={{
                 textShadow: '2px 4px 4px #00B8CC',
                 fontFamily: 'heading',
-                fontSize: [120, 120, 120, 190], 
+                fontSize: [120, 120, 120, 190],
                 lineHeight: ['bigDate.medium', 'bigDate.medium', 'bigDate.medium', 'bigDate.large'],
                 textAlign: ['center','center','center', 'left']
               }}
             >
-              <Text>
-                {data.days}
-              </Text>
-              <Text>
-                {data.month}
-              </Text>
+              <Text>-</Text>
+              {/*<Text>*/}
+              {/*  {data.days}*/}
+              {/*</Text>*/}
+              {/*<Text>*/}
+              {/*  {data.month}*/}
+              {/*</Text>*/}
             </Box>
             <Box
               sx={{
                 fontFamily: 'subHeading',
                 color: 'primary',
-                fontSize: ['29px','29px','29px',40], 
+                fontSize: ['29px','29px','29px',40],
                 lineHeight: ['31px','31px','31px','42px'],
                 mt: [25, 25, 25, 20],
                 textAlign: ['center', 'center', 'center', 'left'],
@@ -99,7 +100,7 @@ const BigDate = () => {
               sx={{
                 fontFamily: 'subHeading',
                 color: 'primary',
-                fontSize: 20, 
+                fontSize: 20,
                 lineHeight: '21px',
                 mt: ['25px','25px','25px','40px'],
                 textAlign: ['center', 'left'],
