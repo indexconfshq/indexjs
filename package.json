@@ -41,7 +41,7 @@
     "gatsby-remark-images": "^3.3.10",
     "gatsby-remark-relative-images": "^0.3.0",
     "gatsby-source-filesystem": "^2.3.10",
-    "gatsby-transformer-remark": "^2.8.15",
+    "gatsby-transformer-remark": "^5.25.1",
     "gatsby-transformer-sharp": "^2.5.4",
     "gsap": "^3.2.6",
     "intersection-observer": "^0.10.0",
